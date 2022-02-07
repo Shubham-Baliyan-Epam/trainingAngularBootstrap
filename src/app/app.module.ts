@@ -5,14 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
+  //decorator ..this provides extra data about this class
   declarations: [
-    AppComponent
+    //this are components which are inside  this module
+    AppComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule], //these modules are imported in the current angular project
+  providers: [], // for services
+  bootstrap: [AppComponent], //which component will be loaded first in memmory from this module
 })
-export class AppModule { }
+export class AppModule {} //App Module
+//module is like package
+//component is like class + HTML
