@@ -1,0 +1,42 @@
+h1 {
+  text-shadow: 0 0 10px 2px rebeccapurple;
+}
+/* .carousel {
+    height: 50vh;
+  } */
+.carousel-inner,
+.carousel-item,
+.carousel {
+  height: 100%;
+}
+img {
+  height: 100%;
+}
+.card {
+  align-items: center;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
+}
+.icon {
+  width: 50px;
+  height: 50px;
+  /* background-image: linear-gradient(to right, #7ed56f, #28b485);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; */
+  fill: lightslategray;
+}
+.addBg {
+  background-image: linear-gradient(
+      105deg,
+      rgba(126, 213, 111, 0.8) 0%,
+      rgba(40, 180, 133, 0.8) 45%,
+      transparent 65%
+    ),
+    url("https://natours.netlify.app/img/hero-small.jpg");
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+}
+input {
+  color: #777;
+}

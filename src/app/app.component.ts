@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   //decorator which provides meta data about the component AppComponent
   selector: 'app-root', //name given to this component

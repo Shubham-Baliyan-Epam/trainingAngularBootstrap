@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PractiseComponent } from './practise/practise.component';
+import { HomeComponent } from './home/home.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   //decorator ..this provides extra data about this class
@@ -11,8 +13,9 @@ import { PractiseComponent } from './practise/practise.component';
     //this are components which are inside  this module
     AppComponent,
     PractiseComponent,
+    HomeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule], //these modules are imported in the current angular project
+  imports: [BrowserModule, AppRoutingModule, FormsModule], //these modules are imported in the current angular project
   providers: [], // for services
   bootstrap: [AppComponent], //which component will be loaded first in memmory from this module
 })
