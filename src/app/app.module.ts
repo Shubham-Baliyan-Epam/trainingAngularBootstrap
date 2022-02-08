@@ -3,12 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PractiseComponent } from './practise/practise.component';
 
 @NgModule({
   //decorator ..this provides extra data about this class
   declarations: [
     //this are components which are inside  this module
     AppComponent,
+    PractiseComponent,
   ],
   imports: [BrowserModule, AppRoutingModule], //these modules are imported in the current angular project
   providers: [], // for services

@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'], // which css is used  for this component
 })
 export class AppComponent {
-  title = 'Shubham Baliyan';
+  title = 'Nature';
+  user = { name: 'shubham Baliyan', email: 'shubham_baliyan@epam.com' };
+  // we have used this variables in the html ONE WAY DATA BINDING
 }
