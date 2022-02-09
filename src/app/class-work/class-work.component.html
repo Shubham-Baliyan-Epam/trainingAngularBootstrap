@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row m-5 justify-content-center">
+    <div class="col-lg-8">
+      <h3 class="text-center my-2">ngFor decorator</h3>
+      <ul>
+        <li *ngFor="let item of arr1">
+          {{ item }}
+        </li>
+      </ul>
+
+      <div class="my-3">&nbsp;</div>
+
+      <button class="btn btn-outline-success" (click)="change()">
+        Click me to Check *ngIf
+      </button>
+      <h3 class="text-center my-2" *ngIf="bool">ngIf decorator</h3>
+    </div>
+  </div>
+</div>

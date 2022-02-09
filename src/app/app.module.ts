@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { ChildComponent } from './child/child.component';
 import { NgStyleCompComponent } from './ng-style-comp/ng-style-comp.component';
 import { EmpRecordComponent } from './emp-record/emp-record.component';
+import { ClassWorkComponent } from './class-work/class-work.component';
 
 @NgModule({
   //decorator ..this provides extra data about this class
@@ -20,6 +21,7 @@ import { EmpRecordComponent } from './emp-record/emp-record.component';
     ChildComponent,
     NgStyleCompComponent,
     EmpRecordComponent,
+    ClassWorkComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule], //these modules are imported in the current angular project
   providers: [], // for services
