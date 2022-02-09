@@ -1,1 +1,78 @@
-<p>emp-record works!</p>
+<div class="row justify-content-center m-5 p-2">
+  <div class="col-lg-8 col-md-10">
+    <h2 class="text-center my-4">Employees Record</h2>
+    <table class="table table-dark table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Location</th>
+          <th scope="col">Designation</th>
+          <th colspan="2">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of emp">
+          <th scope="row">{{ item.id }}</th>
+          <td>{{ item.name }}</td>
+          <td>{{ item.location }}</td>
+          <td>{{ item.designation }}</td>
+          <td>
+            <button
+              class="btn btn-outline-success"
+              (click)="editRecord(item.id)"
+            >
+              Edit
+            </button>
+          </td>
+          <td>
+            <button
+              class="btn btn-outline-danger"
+              (click)="deleteRecord(item.id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <form *ngIf="edit" class="mt-5">
+      <h2 class="text-center my-3">Edit Record</h2>
+      <div class="mb-3">
+        <label for="editName" class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="editName"
+          name="editName"
+          [(ngModel)]="editName"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="editLocation" class="form-label">Location</label>
+
+        <input
+          type="text"
+          class="form-control"
+          id="editLocation"
+          name="editLocation"
+          [(ngModel)]="editLocation"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="editDesignation" class="form-label">Designation</label>
+
+        <input
+          type="text"
+          class="form-control"
+          id="editDesignation"
+          name="editDesignation"
+          [(ngModel)]="editDesignation"
+        />
+      </div>
+      <button class="btn btn-outline-primary" (click)="editRecordDone()">
+        Confirm Edit
+      </button>
+    </form>
+  </div>
+</div>
