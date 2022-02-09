@@ -9,6 +9,9 @@ export class HomeComponent implements OnInit {
   constructor() {}
   title = 'Nature';
   email = '';
+  img1 = './assets/ele.jpg';
+  img2 = './assets/moun.jpg';
+  img3 = '../assets/man.jpg';
   user = { name: 'shubham Baliyan', email: 'shubham_baliyan@epam.com' };
   ngOnInit(): void {}
 }

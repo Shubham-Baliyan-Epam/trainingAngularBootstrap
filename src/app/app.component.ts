@@ -9,5 +9,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'Nature';
   user = { name: 'shubham Baliyan', email: 'shubham_baliyan@epam.com' };
+  name =
+    'shubham Baliyan , this string is passed as  attribute to the child component ';
   // we have used this variables in the html ONE WAY DATA BINDING
 }
