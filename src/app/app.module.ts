@@ -7,6 +7,7 @@ import { PractiseComponent } from './practise/practise.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { ChildComponent } from './child/child.component';
+import { NgStyleCompComponent } from './ng-style-comp/ng-style-comp.component';
 
 @NgModule({
   //decorator ..this provides extra data about this class
@@ -16,6 +17,7 @@ import { ChildComponent } from './child/child.component';
     PractiseComponent,
     HomeComponent,
     ChildComponent,
+    NgStyleCompComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule], //these modules are imported in the current angular project
   providers: [], // for services

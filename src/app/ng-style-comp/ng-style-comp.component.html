@@ -1,0 +1,27 @@
+<form>
+  <div class="mb-3">
+    <label for="color" class="form-label">Email address</label>
+    <input
+      type="color"
+      class="form-control"
+      id="color"
+      name="color"
+      [(ngModel)]="color"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="font" class="form-label">Password</label>
+
+    <input
+      type="text"
+      class="form-control"
+      id="font"
+      name="font"
+      [(ngModel)]="fontSize"
+    />
+  </div>
+</form>
+
+<p [ngStyle]="{ color: color, fontSize: fontSize + 'px' }">
+  ng-style-comp works!
+</p>
