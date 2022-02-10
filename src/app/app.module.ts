@@ -12,6 +12,7 @@ import { EmpRecordComponent } from './emp-record/emp-record.component';
 import { ClassWorkComponent } from './class-work/class-work.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { PipesComponent } from './pipes/pipes.component';
 
 @NgModule({
   //decorator ..this provides extra data about this class
@@ -26,6 +27,7 @@ import { RegistrationComponent } from './registration/registration.component';
     ClassWorkComponent,
     LoginComponent,
     RegistrationComponent,
+    PipesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule], //these modules are imported in the current angular project
   providers: [], // for services

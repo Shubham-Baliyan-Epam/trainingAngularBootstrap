@@ -1,3 +1,12 @@
+<div
+  class="alert alert-warning alert-dismissible fade"
+  [ngClass]="show ? 'show' : ''"
+  role="alert"
+>
+  {{ string }}
+  <button type="button" class="btn-close" (click)="closeAlert()"></button>
+</div>
+
 <div class="row justify-content-center my-5 p-5">
   <div class="col-lg-6">
     <form *ngIf="login">
@@ -9,6 +18,7 @@
           <input
             type="email"
             name="email"
+            [(ngModel)]="email"
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
@@ -20,18 +30,22 @@
             type="password"
             name="password"
             class="form-control"
+            [(ngModel)]="pass"
             id="exampleInputPassword1"
           />
         </div>
 
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="button" class="btn btn-primary" (click)="checkLogin()">
+          Login
+        </button>
         <br />
         <a
           (click)="change()"
-          [routerLink]="['#']"
+          class="d-block my-4"
+          [routerLink]="undefined"
           routerLinkActive="router-link-active"
         >
-          Register</a
+          New user , Register</a
         >
       </form>
     </form>
@@ -47,6 +61,7 @@
             name="email"
             class="form-control"
             id="exampleInputEmail1"
+            [(ngModel)]="email"
             aria-describedby="emailHelp"
           />
         </div>
@@ -55,19 +70,23 @@
           <input
             type="password"
             name="password"
+            [(ngModel)]="pass"
             class="form-control"
             id="exampleInputPassword1"
           />
         </div>
 
-        <button type="submit" class="btn btn-primary">Register</button>
+        <button type="button" class="btn btn-primary" (click)="addToUsers()">
+          Register
+        </button>
         <br />
         <a
           (click)="change()"
-          [routerLink]="['#']"
+          [routerLink]="undefined"
+          class="d-block my-4"
           routerLinkActive="router-link-active"
         >
-          Login</a
+          Already a user , Login</a
         >
       </form>
     </form>

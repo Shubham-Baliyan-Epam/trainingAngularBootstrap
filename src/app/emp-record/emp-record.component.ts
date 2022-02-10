@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Emp } from '../interfaces';
 
 @Component({
@@ -7,9 +8,10 @@ import { Emp } from '../interfaces';
   styleUrls: ['./emp-record.component.css'],
 })
 export class EmpRecordComponent implements OnInit {
-  constructor() {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
   edit: boolean = false;
   editName = '';
+  login!: boolean;
   editLocation = '';
   editDesignation = '';
   editId: number = -1;
@@ -50,5 +52,13 @@ export class EmpRecordComponent implements OnInit {
     this.editName = '';
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.route.params.subscribe((params) => {
+      this.login = params['login'];
+      if (this.login !== true) {
+        this.router.navigate(['/login']);
+      }
+      console.log(this.login, params);
+    });
+  }
 }

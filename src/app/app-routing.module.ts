@@ -13,9 +13,10 @@ const routes: Routes = [
   { path: 'practise', component: PractiseComponent, pathMatch: 'full' },
   { path: 'child', component: ChildComponent, pathMatch: 'full' },
   { path: 'ngStyle', component: NgStyleCompComponent, pathMatch: 'full' },
-  { path: 'empTable', component: EmpRecordComponent, pathMatch: 'full' },
   { path: 'classWork', component: ClassWorkComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
+  { path: 'pipes', component: LoginComponent, pathMatch: 'full' },
+  { path: 'empTable/:login', component: EmpRecordComponent },
 ];
 
 @NgModule({
