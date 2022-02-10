@@ -1,4 +1,4 @@
-<div class="row m-5 p-3">
+<div class="row m-5 p-3 justify-content-center">
   <div class="col-lg-10">
     <form>
       <div class="mb-3">
@@ -18,5 +18,11 @@
     <p class="my-2">Currency in USD : {{ currency | currency: "USD" }}</p>
     <p class="my-2">Currency in INR : {{ currency | currency: "INR" }}</p>
     <p class="my-2">Currency in EURO : {{ currency | currency: "EUR" }}</p>
+
+    <h3 class="text-center my-4">Custom Pipe</h3>
+
+    <p class="my-2">Multiply By 2 : {{ currency | customPipe: 2 }}</p>
+    <p class="my-2">Multiply By 3 : {{ currency | customPipe: 3 }}</p>
+    <p class="my-2">Multiply By 4 : {{ currency | customPipe: 4 }}</p>
   </div>
 </div>

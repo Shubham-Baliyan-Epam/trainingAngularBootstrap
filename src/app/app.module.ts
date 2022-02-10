@@ -13,6 +13,7 @@ import { ClassWorkComponent } from './class-work/class-work.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { CustomPipePipe } from './custom-pipe.pipe';
 
 @NgModule({
   //decorator ..this provides extra data about this class
@@ -28,6 +29,7 @@ import { PipesComponent } from './pipes/pipes.component';
     LoginComponent,
     RegistrationComponent,
     PipesComponent,
+    CustomPipePipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule], //these modules are imported in the current angular project
   providers: [], // for services
