@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { NgStyleCompComponent } from './ng-style-comp/ng-style-comp.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { PractiseComponent } from './practise/practise.component';
+import { TrainingComponent } from './training/training.component';
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'practise', component: PractiseComponent, pathMatch: 'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'classWork', component: ClassWorkComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
   { path: 'pipes', component: PipesComponent, pathMatch: 'full' },
+  { path: 'training', component: TrainingComponent, pathMatch: 'full' },
   {
     path: 'customDirective',
     component: CustomDirectiveComponent,
