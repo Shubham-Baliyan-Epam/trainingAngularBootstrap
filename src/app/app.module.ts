@@ -14,6 +14,8 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { CustomPipePipe } from './custom-pipe.pipe';
+import { CustomDirectiveComponent } from './custom-directive/custom-directive.component';
+import { CustDirectiveDirective } from './cust-directive.directive';
 
 @NgModule({
   //decorator ..this provides extra data about this class
@@ -30,6 +32,8 @@ import { CustomPipePipe } from './custom-pipe.pipe';
     RegistrationComponent,
     PipesComponent,
     CustomPipePipe,
+    CustomDirectiveComponent,
+    CustDirectiveDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule], //these modules are imported in the current angular project
   providers: [], // for services
