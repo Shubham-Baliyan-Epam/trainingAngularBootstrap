@@ -8,7 +8,9 @@ import { Emp } from '../interfaces';
   styleUrls: ['./emp-record.component.css'],
 })
 export class EmpRecordComponent implements OnInit {
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router) {
+    console.log('hi');
+  }
   edit: boolean = false;
   editName = '';
   login!: boolean;
@@ -21,6 +23,7 @@ export class EmpRecordComponent implements OnInit {
     { name: 'Ravi', location: 'Up', designation: 'Govt Employee', id: 3 },
     { name: 'Piyush', location: 'Up', designation: '.net Developer', id: 4 },
   ];
+
   deleteRecord(id: number) {
     console.log(id);
     this.emp = this.emp.filter((item) => item.id !== id);
@@ -55,7 +58,8 @@ export class EmpRecordComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.login = params['login'];
-      if (this.login !== true) {
+      if (typeof this.login === 'boolean' && this.login) {
+        console.log('lol');
         this.router.navigate(['/login']);
       }
       console.log(this.login, params);
