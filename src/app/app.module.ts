@@ -18,6 +18,7 @@ import { CustomDirectiveComponent } from './custom-directive/custom-directive.co
 import { CustDirectiveDirective } from './cust-directive.directive';
 import { TrainingComponent } from './training/training.component';
 import { LoggerComponent } from './logger/logger.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   //decorator ..this provides extra data about this class
@@ -38,6 +39,7 @@ import { LoggerComponent } from './logger/logger.component';
     CustDirectiveDirective,
     TrainingComponent,
     LoggerComponent,
+    ProductComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule], //these modules are imported in the current angular project
   providers: [], // for services
