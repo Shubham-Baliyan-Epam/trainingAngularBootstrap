@@ -6,6 +6,7 @@ import { ClassWorkComponent } from './class-work/class-work.component';
 import { CustomDirectiveComponent } from './custom-directive/custom-directive.component';
 import { EmpRecordComponent } from './emp-record/emp-record.component';
 import { HomeComponent } from './home/home.component';
+import { LoggerComponent } from './logger/logger.component';
 import { LoginComponent } from './login/login.component';
 import { NgStyleCompComponent } from './ng-style-comp/ng-style-comp.component';
 import { PipesComponent } from './pipes/pipes.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
   { path: 'pipes', component: PipesComponent, pathMatch: 'full' },
   { path: 'training', component: TrainingComponent, pathMatch: 'full' },
+  { path: 'logger', component: LoggerComponent, pathMatch: 'full' },
   {
     path: 'customDirective',
     component: CustomDirectiveComponent,

@@ -17,6 +17,7 @@ import { CustomPipePipe } from './custom-pipe.pipe';
 import { CustomDirectiveComponent } from './custom-directive/custom-directive.component';
 import { CustDirectiveDirective } from './cust-directive.directive';
 import { TrainingComponent } from './training/training.component';
+import { LoggerComponent } from './logger/logger.component';
 
 @NgModule({
   //decorator ..this provides extra data about this class
@@ -36,6 +37,7 @@ import { TrainingComponent } from './training/training.component';
     CustomDirectiveComponent,
     CustDirectiveDirective,
     TrainingComponent,
+    LoggerComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule], //these modules are imported in the current angular project
   providers: [], // for services
