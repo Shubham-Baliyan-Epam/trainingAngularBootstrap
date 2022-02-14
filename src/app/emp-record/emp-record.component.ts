@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChange } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { AuthService } from '../auth.service';
 // import { Emp } from '../interfaces';
 import { User, UserService } from '../user.service';
 
@@ -13,7 +14,8 @@ export class EmpRecordComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
+    private authService: AuthService
   ) {
     // this.userService.getUsers();
 
@@ -90,7 +92,11 @@ export class EmpRecordComponent implements OnInit {
     this.editDesignation = '';
     this.editLocation = '';
   }
+  ngDoCheck() {
+    console.log('helloe', this.editEmail);
+  }
   ngOnInit(): void {
+    // this.authService.checkIfUserLoggedIn();
     this.emp = this.userService.users;
     this.userService.getUsers();
     this.route.params.subscribe((params) => {
