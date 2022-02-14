@@ -2,7 +2,7 @@ export class Product {
   name!: string;
   id!: number;
   price!: number;
-  catergory!: string;
+  category!: string;
   discount!: number;
   constructor(
     name: string,
@@ -14,7 +14,7 @@ export class Product {
     this.name = name;
     this.id = id;
     this.price = price;
-    this.catergory = category;
+    this.category = category;
     this.discount = discount;
   }
 }

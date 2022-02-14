@@ -23,12 +23,18 @@ export class ProductService {
   // getAllProducts(): Product[] {
   //   return this.productsArray.asObservables();
   // }
-  getSingleProduct(id: number): object {
+  getSingleProduct(id: number): Product {
     let item = this.dataStore.productsArray.find((item) => item.id === id);
     if (item) {
       return item;
     }
-    return {};
+    return {
+      id: 0,
+      name: '',
+      category: '',
+      price: 0,
+      discount: 0,
+    };
   }
   updateproduct(id: number, data: Product) {
     let index = this.dataStore.productsArray.findIndex(
@@ -38,6 +44,10 @@ export class ProductService {
       this.dataStore.productsArray[index] = data;
       this._productsArray.next(Object.assign({}, this.dataStore).productsArray);
     }
+  }
+  addSingleProduct(data: Product) {
+    this.dataStore.productsArray.push(data);
+    this._productsArray.next(Object.assign({}, this.dataStore).productsArray);
   }
   deleteProduct(id: number) {
     this.dataStore.productsArray = this.dataStore.productsArray.filter(
