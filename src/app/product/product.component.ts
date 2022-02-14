@@ -10,18 +10,38 @@ import { ProductService } from '../product.service';
 })
 export class ProductComponent implements OnInit {
   products!: Observable<Product[]>;
+  searchedProducts!: Product[];
   editName!: string;
   addForm = false;
   editPrice!: number;
   editDiscount!: number;
   editCategory!: string;
   editId!: number;
+  showSearched: boolean = false;
+  filterValue!: any;
+  filterType!: any;
   constructor(private productService: ProductService) {}
   ngOnInit(): void {
     this.products = this.productService.productsArray;
   }
   changeForm() {
+    this.resetData();
     this.addForm = true;
+  }
+  reset() {
+    this.showSearched = false;
+    this.filterType = '';
+    this.filterValue = '';
+  }
+  filterData() {
+    console.log(this.filterValue, this.filterType);
+    this.searchedProducts = this.productService.filterData(
+      this.filterValue,
+      this.filterType
+    );
+    if (this.searchedProducts.length) {
+      this.showSearched = true;
+    }
   }
   show() {
     console.log(this.products);

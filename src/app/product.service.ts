@@ -45,6 +45,12 @@ export class ProductService {
       this._productsArray.next(Object.assign({}, this.dataStore).productsArray);
     }
   }
+  filterData(val: any, type: string) {
+    let newData = this.dataStore.productsArray.filter(
+      (item: Product) => item[type] === val
+    );
+    return newData;
+  }
   addSingleProduct(data: Product) {
     this.dataStore.productsArray.push(data);
     this._productsArray.next(Object.assign({}, this.dataStore).productsArray);

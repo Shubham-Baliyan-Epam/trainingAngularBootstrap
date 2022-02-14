@@ -1,4 +1,5 @@
 export class Product {
+  [key: string]: any;
   name!: string;
   id!: number;
   price!: number;

@@ -33,6 +33,8 @@ export class EmpRecordComponent implements OnInit {
     console.log(this.emp);
   }
   changeForm() {
+    this.resetData();
+
     this.addForm = true;
   }
   deleteRecord(id: number) {
