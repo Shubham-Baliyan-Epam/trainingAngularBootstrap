@@ -30,6 +30,7 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   { path: 'empTable/:login', component: EmpRecordComponent },
+  { path: '**', component: HomeComponent },
 ];
 
 @NgModule({
