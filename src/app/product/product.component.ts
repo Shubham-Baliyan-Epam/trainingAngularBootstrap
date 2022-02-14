@@ -57,7 +57,7 @@ export class ProductComponent implements OnInit {
     this.productService.updateproduct(this.editId, data);
     this.resetData();
   }
-  async addProduct() {
+  addProduct() {
     let id = Math.floor(Math.random() * 10 + 4);
     let data = {
       id,

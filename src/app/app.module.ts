@@ -19,7 +19,8 @@ import { CustDirectiveDirective } from './cust-directive.directive';
 import { TrainingComponent } from './training/training.component';
 import { LoggerComponent } from './logger/logger.component';
 import { ProductComponent } from './product/product.component';
-
+import { UserService } from './user.service';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   //decorator ..this provides extra data about this class
   declarations: [
@@ -41,7 +42,7 @@ import { ProductComponent } from './product/product.component';
     LoggerComponent,
     ProductComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule], //these modules are imported in the current angular project
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule], //these modules are imported in the current angular project
   providers: [], // for services
   bootstrap: [AppComponent], //which component will be loaded first in memmory from this module
 })

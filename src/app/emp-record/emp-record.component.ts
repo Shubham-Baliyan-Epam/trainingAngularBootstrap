@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Emp } from '../interfaces';
+import { Observable } from 'rxjs';
+// import { Emp } from '../interfaces';
+import { User, UserService } from '../user.service';
 
 @Component({
   selector: 'app-emp-record',
@@ -8,60 +10,96 @@ import { Emp } from '../interfaces';
   styleUrls: ['./emp-record.component.css'],
 })
 export class EmpRecordComponent implements OnInit {
-  constructor(private route: ActivatedRoute, private router: Router) {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private userService: UserService
+  ) {
+    // this.userService.getUsers();
+
     console.log('hi');
   }
+  addForm: boolean = true;
   edit: boolean = false;
   editName = '';
   login!: boolean;
   editLocation = '';
   editDesignation = '';
+  editUsername!: string;
+  editEmail!: string;
   editId: number = -1;
-  emp: Emp[] = [
-    { name: 'shubham', location: 'Up', designation: 'Junior', id: 1 },
-    { name: 'Vivek', location: 'Up', designation: 'Lawyer', id: 2 },
-    { name: 'Ravi', location: 'Up', designation: 'Govt Employee', id: 3 },
-    { name: 'Piyush', location: 'Up', designation: '.net Developer', id: 4 },
-  ];
-
+  emp!: Observable<User[]>;
+  readme() {
+    console.log(this.emp);
+  }
+  changeForm() {
+    this.addForm = true;
+  }
   deleteRecord(id: number) {
-    console.log(id);
-    this.emp = this.emp.filter((item) => item.id !== id);
+    // console.log(id);
+    this.userService.deleteUser(id);
+    // this.emp = this.emp.filter((item) => item.id !== id);
   }
   editRecord(id: number) {
-    let record = this.emp.find((item) => item.id === id);
-    if (record) {
-      this.editName = record.name;
-      this.editLocation = record.location;
-      this.editDesignation = record.designation;
-      this.editId = record.id;
-      this.edit = true;
-    }
+    this.addForm = false;
+    this.editId = id;
+    this.userService.getUser(id).subscribe(
+      (data) => {
+        this.editName = data.name;
+        this.editDesignation = data.designation;
+        this.editEmail = data.email;
+        this.editLocation = data.address;
+        this.editUsername = data.username;
+      },
+      (err) => console.log('user not found')
+    );
+    //  let record =this.userService.
   }
-  editRecordDone() {
-    if (this.editId !== -1) {
-      let index = this.emp.findIndex((item) => item.id === this.editId);
-      this.emp[index] = {
-        id: this.editId,
-        name: this.editName,
-        designation: this.editDesignation,
-        location: this.editLocation,
-      };
-    }
+  addProduct() {
+    let id = Math.floor(Math.random() * 10 + 4);
+    let data = {
+      id,
+      name: this.editName,
+      email: this.editEmail,
+      username: this.editUsername,
+      address: this.editLocation,
+      designation: this.editDesignation,
+    };
+    this.userService.createUser(data);
+    this.resetData();
+  }
+  onEditSubmit() {
+    let data: User = {
+      name: this.editName,
+      id: this.editId,
+      username: this.editUsername,
+      designation: this.editDesignation,
+      address: this.editLocation,
+      email: this.editEmail,
+    };
+    this.userService.updateUser(data);
+    this.resetData();
+  }
+  resetData() {
     this.editId = -1;
-    this.edit = false;
+    this.editUsername = '';
+    this.editName = '';
+    this.editEmail = '';
     this.editDesignation = '';
     this.editLocation = '';
-    this.editName = '';
   }
-
   ngOnInit(): void {
+    this.emp = this.userService.users;
+    this.userService.getUsers();
     this.route.params.subscribe((params) => {
       this.login = params['login'];
-      if (typeof this.login === 'boolean' && this.login) {
+      if (typeof this.login !== 'boolean' && !this.login) {
         console.log('lol');
         this.router.navigate(['/login']);
       }
+      // if (!this.login) {
+      //   this.router.navigate(['/login']);
+      // }
       console.log(this.login, params);
     });
   }

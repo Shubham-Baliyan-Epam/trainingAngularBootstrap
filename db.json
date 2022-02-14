@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "name": "Leanne Graham",
+      "id": 1,
+      "username": "Bret",
+      "designation": "Junior",
+      "address": "Ludhiana",
+      "email": "Sincere@april.biz"
+    },
+    {
+      "id": 2,
+      "name": "Shubham Graham",
+      "username": "lee",
+      "email": "shubham@april.biz",
+      "address": "GZB",
+      "designation": "Junior"
+    },
+    {
+      "id": 7,
+      "name": "papa",
+      "email": "papa@papa.com",
+      "username": "pilil",
+      "address": "FZB",
+      "designation": "ASE"
+    },
+    {
+      "id": 4,
+      "name": "Vivek",
+      "email": "viv@gmail.com",
+      "username": "vivi",
+      "address": "Ambey",
+      "designation": "Lawyer"
+    }
+  ]
+}
