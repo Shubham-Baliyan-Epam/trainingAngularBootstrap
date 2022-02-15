@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor() {}
+  constructor(private router: Router) {}
   private setlocalStorage() {
     window.localStorage.setItem('login', 'true');
   }
@@ -24,6 +25,21 @@ export class AuthService {
     if (login) {
       return true;
     }
+    return false;
+  }
+  canActivate(): boolean {
+    let login = window.localStorage.getItem('login');
+    if (login) {
+      login = JSON.parse(login);
+    }
+    console.log('HELLLOW  NLJKNKJNKJNK', typeof login);
+    if (login) {
+      console.log('HELLLOW  ewnrjnjkwenkjnkn', login);
+
+      return true;
+    }
+    console.log('jsndjnsjdnjknskdjknk');
+    this.router.navigate(['/']);
     return false;
   }
 }
