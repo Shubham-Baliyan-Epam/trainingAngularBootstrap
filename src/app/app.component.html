@@ -44,11 +44,19 @@
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
       <button
+        *ngIf="!isLogin"
         class="btn btn-outline-success ms-4"
         [routerLink]="['/login']"
         routerLinkActive="router-link-active"
       >
         Login
+      </button>
+      <button
+        *ngIf="isLogin"
+        class="btn btn-outline-danger ms-4"
+        (click)="logout()"
+      >
+        Logout
       </button>
     </div>
   </div>

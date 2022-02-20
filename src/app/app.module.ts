@@ -21,6 +21,7 @@ import { LoggerComponent } from './logger/logger.component';
 import { ProductComponent } from './product/product.component';
 import { UserService } from './user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginQueryComponent } from './login-query/login-query.component';
 @NgModule({
   //decorator ..this provides extra data about this class
   declarations: [
@@ -41,6 +42,7 @@ import { HttpClientModule } from '@angular/common/http';
     TrainingComponent,
     LoggerComponent,
     ProductComponent,
+    LoginQueryComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule], //these modules are imported in the current angular project
   providers: [], // for services

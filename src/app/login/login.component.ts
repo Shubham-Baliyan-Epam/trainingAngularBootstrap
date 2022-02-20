@@ -1,12 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private route: Router) {}
+  constructor(
+    private route: Router,
+    private authservice: AuthService,
+    private activateRoute: ActivatedRoute
+  ) {}
   login = true;
   show = false;
   users = [
@@ -33,23 +38,36 @@ export class LoginComponent implements OnInit {
     console.log(this.users);
   }
   checkLogin() {
-    let data = this.users.find((item) => item.usid === this.email);
-    if (data) {
-      if (this.pass === data.pass) {
-        this.string = 'logged in successfully';
-        this.show = true;
-        this.email = '';
-        this.pass = '';
+    // let data = this.users.find((item) => item.usid === this.email);
+    this.route.navigate(['/loginQuery'], {
+      queryParams: { uid: this.email, pass: this.pass },
+    });
+    // this.checkLogged();
+    // this.authservice.login(this.email, this.pass);
+    // if (this.authservice.checkIfUserLoggedIn()) {
+    //   this.route.navigate(['/empTable/true']);
+    //   return;
+    // }
+
+    // this.string = 'Email or password is wrong';
+    // this.show = true;
+    // this.email = '';
+    // this.pass = '';
+  }
+  checkLogged() {
+    this.activateRoute.params.subscribe((params) => {
+      let { uid, pass } = params;
+      console.log(uid, pass, 'HJJJJJJJJJJJJJjjj', params);
+      this.authservice.login(uid, pass);
+      if (this.authservice.checkIfUserLoggedIn()) {
         this.route.navigate(['/empTable/true']);
         return;
       }
-    }
-    this.string = 'Email or password is wrong';
-    this.show = true;
-    this.email = '';
-    this.pass = '';
+    });
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.checkLogged();
+  }
   change() {
     this.login = !this.login;
   }
