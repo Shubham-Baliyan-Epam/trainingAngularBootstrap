@@ -42,6 +42,15 @@
       "rating": 5,
       "stock": 20,
       "img": "/assets/man.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Kifs",
+      "category": "electronics",
+      "price": 50,
+      "rating": 5,
+      "stock": 20,
+      "img": "/assets/man.jpg"
     }
   ]
 }
