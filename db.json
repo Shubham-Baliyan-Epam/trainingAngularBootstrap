@@ -32,5 +32,16 @@
       "address": "Ambey",
       "designation": "Lawyer"
     }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Leanne Graham",
+      "category": "kids",
+      "price": 50,
+      "rating": 5,
+      "stock": 20,
+      "img": "/assets/man.jpg"
+    }
   ]
 }
