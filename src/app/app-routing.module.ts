@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { NgStyleCompComponent } from './ng-style-comp/ng-style-comp.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { PractiseComponent } from './practise/practise.component';
+import { ProductPageComponent } from './product-page/product-page.component';
 import { ProductComponent } from './product/product.component';
 import { TrainingComponent } from './training/training.component';
 const routes: Routes = [
@@ -30,7 +31,9 @@ const routes: Routes = [
     canActivate: [AuthService],
   },
   { path: 'logger', component: LoggerComponent, pathMatch: 'full' },
-  { path: 'products', component: ProductComponent, pathMatch: 'full' },
+  // { path: 'products', component: ProductComponent, pathMatch: 'full' },
+  { path: 'products', component: ProductPageComponent, pathMatch: 'full' },
+
   {
     path: 'customDirective',
     component: CustomDirectiveComponent,
