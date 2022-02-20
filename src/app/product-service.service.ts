@@ -8,6 +8,7 @@ export interface ProductE {
   rating: number;
   stock: number;
   name: string;
+  brand: string;
   category: string;
   img: string;
 }

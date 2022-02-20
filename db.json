@@ -36,21 +36,183 @@
   "products": [
     {
       "id": 1,
-      "name": "Leanne Graham",
+      "name": "Green Sweater",
       "category": "kids",
-      "price": 50,
+      "price": 1299,
+      "brand": "Nike",
       "rating": 5,
       "stock": 20,
-      "img": "/assets/man.jpg"
+      "img": "/assets/kid1.webp"
     },
     {
       "id": 2,
-      "name": "Kifs",
-      "category": "electronics",
-      "price": 50,
+      "name": "Brooklyn Sweatshirt",
+      "category": "kids",
+      "price": 990,
+      "brand": "Nike",
       "rating": 5,
       "stock": 20,
-      "img": "/assets/man.jpg"
+      "img": "/assets/kid2.webp"
+    },
+    {
+      "id": 3,
+      "name": "Nasa Spacesuit",
+      "category": "kids",
+      "price": 3999,
+      "brand": "Puma",
+      "rating": 5,
+      "stock": 20,
+      "img": "/assets/kid3.webp"
+    },
+    {
+      "id": 4,
+      "name": "Stripe T-Shirt",
+      "category": "kids",
+      "price": 499,
+      "brand": "Puma",
+      "rating": 5,
+      "stock": 20,
+      "img": "/assets/kid4.webp"
+    },
+    {
+      "id": 5,
+      "name": " Cap",
+      "category": "kids",
+      "price": 299,
+      "brand": "Rebook",
+      "rating": 5,
+      "stock": 20,
+      "img": "/assets/kid5.webp"
+    },
+    {
+      "id": 6,
+      "name": "Knitted Sweater",
+      "category": "kids",
+      "price": 499,
+      "rating": 5,
+      "brand": "Adidas",
+      "stock": 20,
+      "img": "/assets/kid6.webp"
+    },
+    {
+      "id": 7,
+      "name": "Brown Blazer",
+      "category": "mens",
+      "price": 699,
+      "brand": "H&M",
+      "rating": 5,
+      "stock": 20,
+      "img": "/assets/men1.webp"
+    },
+    {
+      "id": 8,
+      "name": "Blue Hat",
+      "category": "mens",
+      "price": 1999,
+      "brand": "Zara",
+      "rating": 5,
+      "stock": 20,
+      "img": "/assets/men2.webp"
+    },
+    {
+      "id": 9,
+      "name": "Hoodie",
+      "category": "mens",
+      "price": 1500,
+      "brand": "H&M",
+      "rating": 5,
+      "stock": 20,
+      "img": "/assets/men3.webp"
+    },
+    {
+      "id": 10,
+      "name": "SweatShirt ",
+      "category": "mens",
+      "price": 999,
+      "brand": "Fila",
+      "rating": 5,
+      "stock": 20,
+      "img": "/assets/men4.webp"
+    },
+    {
+      "id": 11,
+      "name": "White Shirt",
+      "category": "mens",
+      "price": 2999,
+      "rating": 5,
+      "brand": "Armani Exchange",
+      "stock": 20,
+      "img": "/assets/men5.webp"
+    },
+    {
+      "id": 12,
+      "name": "Women white top",
+      "category": "women",
+      "price": 12000,
+      "brand": "Mocha & Vodka",
+      "rating": 5,
+      "stock": 20,
+      "img": "/assets/women1.webp"
+    },
+    {
+      "id": 13,
+      "name": "Women pink sweatshirt",
+      "category": "women",
+      "price": 16000,
+      "brand": "GUCHI",
+      "rating": 5,
+      "stock": 20,
+      "img": "/assets/women2.webp"
+    },
+    {
+      "id": 14,
+      "name": "winter coat",
+      "category": "women",
+      "price": 20000,
+      "brand": "Prada",
+      "rating": 5,
+      "stock": 20,
+      "img": "/assets/women3.webp"
+    },
+    {
+      "id": 15,
+      "name": "Brown Knitted Sweater",
+      "category": "women",
+      "price": 100000,
+      "brand": "Versache",
+      "rating": 5,
+      "stock": 20,
+      "img": "/assets/women4.webp"
+    },
+    {
+      "id": 16,
+      "name": "Pjamas",
+      "category": "women",
+      "price": 990,
+      "brand": "Jockey",
+      "rating": 5,
+      "stock": 20,
+      "img": "/assets/women5.webp"
+    },
+    {
+      "id": 17,
+      "name": "Women Long Coat",
+      "category": "women",
+      "price": 12000,
+      "brand": "H&M",
+      "rating": 5,
+      "stock": 20,
+      "img": "/assets/women6.webp"
+    },
+    {
+      "id": 18,
+      "name": "Fur Coat",
+      "category": "women",
+      "price": 10000,
+      "brand": "Luis Vuitton",
+      "rating": 5,
+      "stock": 20,
+      "img": "/assets/women7.webp"
     }
   ]
 }
