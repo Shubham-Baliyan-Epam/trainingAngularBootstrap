@@ -10,9 +10,47 @@ import { ProductE, ProductServiceService } from '../product-service.service';
 export class ProductPageComponent implements OnInit {
   products!: Observable<ProductE[]>;
   constructor(private productsService: ProductServiceService) {}
+  range: number = 0;
+  search: string = '';
+  electronics: boolean = false;
+  mens: boolean = false;
+  women: boolean = false;
+  kids: boolean = false;
+  category!: string;
 
   ngOnInit(): void {
     this.products = this.productsService.products;
+    this.productsService.getProducts();
+  }
+  // ngDoCheck() {
+  //   console.log(
+  //     'category',
+  //     this.category,
+  //     this.electronics,
+  //     this.mens,
+  //     this.women,
+  //     this.kids
+  //   );
+  // }
+  searchTheProducts() {
+    let queryString = '?';
+    if (this.category) {
+      queryString += 'category=' + this.category + '&';
+    }
+    if (this.range > 0) {
+      queryString += 'price_lte=' + this.range + '&';
+    }
+    if (this.search) {
+      queryString += 'name_like=' + this.search;
+    }
+    if (queryString.length > 1) {
+      this.productsService.getProducts(queryString);
+    }
+  }
+  resetProducts() {
+    this.search = '';
+    this.category = '';
+    this.range = 0;
     this.productsService.getProducts();
   }
 }

@@ -21,8 +21,13 @@ export class ProductServiceService {
   private baseUrl = 'http://localhost:3000/products';
   private dataStore: { products: ProductE[] } = { products: [] };
   readonly products = this._products.asObservable();
-  getProducts() {
-    this.http.get<ProductE[]>(`${this.baseUrl}`).subscribe(
+  getProducts(query = '') {
+    let url = this.baseUrl;
+    if (query) {
+      url += query;
+    }
+
+    this.http.get<ProductE[]>(url).subscribe(
       (data) => {
         this.dataStore.products = data;
 
