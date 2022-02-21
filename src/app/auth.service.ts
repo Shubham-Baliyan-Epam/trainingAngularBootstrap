@@ -1,44 +1,60 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { BehaviorSubject, Observable } from 'rxjs';
+export interface Auth {
+  name: string;
+  id: number;
+  email: string;
+  password: string;
+}
+interface local extends Auth {
+  loggedIn: boolean;
+}
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private router: Router) {}
-  private setlocalStorage() {
-    window.localStorage.setItem('login', 'true');
+  constructor(private router: Router, private http: HttpClient) {}
+  private baseUrl = 'http://localhost:3000/auth';
+  private login = new BehaviorSubject(false);
+
+  checkLogin(): Observable<boolean> {
+    return this.login.asObservable();
   }
-  login(email: string, pass: string): string {
-    if (email === 'admin@gmail.com' && pass === 'admin1234') {
-      this.setlocalStorage();
-      return 'User logged in successfully';
-    }
-    return 'Wrong email and password';
-  }
-  logout() {
-    window.localStorage.removeItem('login');
+  setLogin(val: boolean) {
+    this.login.next(val);
   }
 
-  checkIfUserLoggedIn(): boolean {
-    let login = window.localStorage.getItem('login');
-    if (login) {
-      return true;
-    }
-    return false;
+  setlocalStorage(data: local) {
+    let newData = JSON.stringify(data);
+    window.localStorage.setItem('user', newData);
   }
+  doLogin(email: string, pass: string) {
+    return this.http.get<Auth[]>(`${this.baseUrl}?email=${email}`);
+  }
+  doRegister(data: Auth) {
+    let headers = { 'content-type': 'application/json' };
+    let body = JSON.stringify(data);
+    console.log(body);
+    return this.http.post<Auth>(this.baseUrl, body, { headers });
+  }
+  logout() {
+    window.localStorage.removeItem('user');
+  }
+
   canActivate(): boolean {
-    let login = window.localStorage.getItem('login');
+    let login: local | string | null = window.localStorage.getItem('user');
     if (login) {
       login = JSON.parse(login);
     }
     console.log('HELLLOW  NLJKNKJNKJNK', typeof login);
-    if (login) {
-      console.log('HELLLOW  ewnrjnjkwenkjnkn', login);
-
-      return true;
+    if (login !== null && typeof login !== 'string') {
+      if (login.loggedIn) {
+        this.login.next(true);
+        return true;
+      }
     }
-    console.log('jsndjnsjdnjknskdjknk');
     this.router.navigate(['/']);
     return false;
   }

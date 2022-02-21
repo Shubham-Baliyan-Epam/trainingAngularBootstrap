@@ -10,20 +10,31 @@ import { AuthService } from './auth.service';
 export class AppComponent {
   constructor(private authService: AuthService) {}
   title = 'Nature';
-  isLogin: boolean = false;
+  isLogin!: boolean;
   user = { name: 'shubham Baliyan', email: 'shubham_baliyan@epam.com' };
   name =
     'shubham Baliyan , this string is passed as  attribute to the child component ';
   // we have used this variables in the html ONE WAY DATA BINDING
   checkLogin() {
-    console.log('LOLOLOLOL');
-    this.isLogin = this.authService.checkIfUserLoggedIn();
+    console.log('LOLOLOLOL-1');
+    this.isLogin = this.authService.canActivate();
+    console.log('LOLOLOLOL-2', this.isLogin);
   }
   logout() {
     this.authService.logout();
-    this.checkLogin();
+    // this.isLogin = false;
+    this.authService.setLogin(false);
+    // this.checkLogin();
+    console.log('lllllllllllllllllll');
   }
   ngOnInit() {
-    this.checkLogin();
+    this.authService.checkLogin().subscribe((login) => {
+      this.isLogin = login;
+      console.log(this.isLogin, login);
+    });
+    this.authService.canActivate();
   }
+  // ngDoCheck() {
+  //   // this.checkLogin();
+  // }
 }

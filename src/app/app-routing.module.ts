@@ -15,6 +15,7 @@ import { PipesComponent } from './pipes/pipes.component';
 import { PractiseComponent } from './practise/practise.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { ProductComponent } from './product/product.component';
+import { RegistrationComponent } from './registration/registration.component';
 import { TrainingComponent } from './training/training.component';
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'ngStyle', component: NgStyleCompComponent, pathMatch: 'full' },
   { path: 'classWork', component: ClassWorkComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
+  { path: 'register', component: RegistrationComponent, pathMatch: 'full' },
   { path: 'pipes', component: PipesComponent, pathMatch: 'full' },
   {
     path: 'training',

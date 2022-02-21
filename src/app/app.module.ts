@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PractiseComponent } from './practise/practise.component';
 import { HomeComponent } from './home/home.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChildComponent } from './child/child.component';
 import { NgStyleCompComponent } from './ng-style-comp/ng-style-comp.component';
 import { EmpRecordComponent } from './emp-record/emp-record.component';
@@ -46,7 +46,13 @@ import { ProductPageComponent } from './product-page/product-page.component';
     LoginQueryComponent,
     ProductPageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule], //these modules are imported in the current angular project
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ], //these modules are imported in the current angular project
   providers: [], // for services
   bootstrap: [AppComponent], //which component will be loaded first in memmory from this module
 })

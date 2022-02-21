@@ -1,1 +1,83 @@
-<p>registration works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            formControlName="name"
+            placeholder="Your name"
+            aria-describedby="nameHelp"
+          />
+          <div
+            id="nameHelp"
+            class="form-text text-danger"
+            *ngIf="
+              myForm.get('name')?.invalid &&
+              (myForm.get('name')?.dirty || myForm.get('name')?.touched)
+            "
+          >
+            Please provide a name.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Email address</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            formControlName="email"
+            placeholder="Your email"
+            aria-describedby="emailHelp"
+          />
+          <div
+            id="emailHelp"
+            class="form-text text-danger"
+            *ngIf="
+              myForm.get('email')?.invalid &&
+              (myForm.get('email')?.dirty || myForm.get('email')?.touched)
+            "
+          >
+            Please provide a valid email address
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            formControlName="password"
+            placeholder="Your password"
+            id="exampleInputPassword1"
+            aria-describedby="passwordHelp"
+          />
+          <div
+            id="passwordHelp"
+            class="form-text text-danger"
+            *ngIf="
+              myForm.get('password')?.invalid &&
+              (myForm.get('password')?.dirty || myForm.get('password')?.touched)
+            "
+          >
+            Please provide a valid password ( minimum length is 8)
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary d-block"
+          [disabled]="myForm.invalid"
+        >
+          Submit
+        </button>
+        <p class="form-text">
+          Already a user ? <a routerLink="/login">Login</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>

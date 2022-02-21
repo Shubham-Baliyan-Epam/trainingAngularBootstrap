@@ -9,86 +9,41 @@
 
 <div class="row justify-content-center my-5 p-5">
   <div class="col-lg-6">
-    <form *ngIf="login">
-      <form>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"
-            >Email address</label
-          >
-          <input
-            type="email"
-            name="email"
-            [(ngModel)]="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input
-            type="password"
-            name="password"
-            class="form-control"
-            [(ngModel)]="pass"
-            id="exampleInputPassword1"
-          />
-        </div>
+    <form>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          [(ngModel)]="pass"
+          id="exampleInputPassword1"
+        />
+      </div>
 
-        <button type="button" class="btn btn-primary" (click)="checkLogin()">
-          Login
-        </button>
-        <br />
-        <a
-          (click)="change()"
-          class="d-block my-4"
-          [routerLink]="undefined"
-          routerLinkActive="router-link-active"
-        >
-          New user , Register</a
-        >
-      </form>
-    </form>
+      <button
+        type="button"
+        class="btn btn-primary d-block"
+        (click)="checkLogin()"
+      >
+        Login
+      </button>
 
-    <form *ngIf="login === false">
-      <form>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"
-            >Email address</label
-          >
-          <input
-            type="email"
-            name="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            [(ngModel)]="email"
-            aria-describedby="emailHelp"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input
-            type="password"
-            name="password"
-            [(ngModel)]="pass"
-            class="form-control"
-            id="exampleInputPassword1"
-          />
-        </div>
-
-        <button type="button" class="btn btn-primary" (click)="addToUsers()">
-          Register
-        </button>
-        <br />
-        <a
-          (click)="change()"
-          [routerLink]="undefined"
-          class="d-block my-4"
-          routerLinkActive="router-link-active"
-        >
-          Already a user , Login</a
-        >
-      </form>
+      <p class="form-text">
+        New User ?
+        <a routerLink="/register" class="my-4"> Register</a>
+      </p>
     </form>
   </div>
 </div>

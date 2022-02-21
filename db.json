@@ -274,5 +274,25 @@
       "stock": 20,
       "img": "/assets/elect6.webp"
     }
+  ],
+  "auth": [
+    {
+      "id": 1,
+      "name": "Shubham",
+      "email": "admin@shubham.com",
+      "password": "admin1234"
+    },
+    {
+      "id": 67,
+      "name": "papa",
+      "email": "papa@papa",
+      "password": "papapapap"
+    },
+    {
+      "id": 36,
+      "name": "shubham",
+      "email": "lololol@lol",
+      "password": "lolololol"
+    }
   ]
 }

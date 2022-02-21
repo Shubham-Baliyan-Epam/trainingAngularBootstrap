@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
     private authservice: AuthService,
     private activateRoute: ActivatedRoute
   ) {}
-  login = true;
+  // login = true;
   show = false;
   users = [
     {
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     console.log(this.email, this.pass);
     this.show = true;
     this.users.push({ usid: this.email, pass: this.pass });
-    this.login = true;
+    // this.login = true;
     this.email = '';
     this.pass = '';
     this.string = 'User registerd successfully';
@@ -39,11 +39,23 @@ export class LoginComponent implements OnInit {
   }
   checkLogin() {
     // let data = this.users.find((item) => item.usid === this.email);
-    this.route.navigate(['/loginQuery'], {
-      queryParams: { uid: this.email, pass: this.pass },
-    });
+    // this.route.navigate(['/loginQuery'], {
+    //   queryParams: { uid: this.email, pass: this.pass },
+    // });
     // this.checkLogged();
-    // this.authservice.login(this.email, this.pass);
+    this.authservice.doLogin(this.email, this.pass).subscribe(
+      (data) => {
+        if (data.length) {
+          let item = data[0];
+          if (item.password === this.pass) {
+            this.authservice.setLogin(true);
+            this.authservice.setlocalStorage({ loggedIn: true, ...data[0] });
+            this.route.navigate(['/']);
+          }
+        }
+      },
+      (err) => {}
+    );
     // if (this.authservice.checkIfUserLoggedIn()) {
     //   this.route.navigate(['/empTable/true']);
     //   return;
@@ -58,17 +70,17 @@ export class LoginComponent implements OnInit {
     this.activateRoute.params.subscribe((params) => {
       let { uid, pass } = params;
       console.log(uid, pass, 'HJJJJJJJJJJJJJjjj', params);
-      this.authservice.login(uid, pass);
-      if (this.authservice.checkIfUserLoggedIn()) {
-        this.route.navigate(['/empTable/true']);
-        return;
-      }
+      // this.authservice.login(uid, pass);
+      // if (this.authservice.checkIfUserLoggedIn()) {
+      //   this.route.navigate(['/empTable/true']);
+      //   return;
+      // }
     });
   }
   ngOnInit(): void {
     // this.checkLogged();
   }
   change() {
-    this.login = !this.login;
+    // this.login = !this.login;
   }
 }

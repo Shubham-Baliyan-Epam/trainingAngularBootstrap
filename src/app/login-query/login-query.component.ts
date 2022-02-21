@@ -18,12 +18,12 @@ export class LoginQueryComponent implements OnInit {
     this.route.queryParams.subscribe((param) => {
       let { uid, pass } = param;
       console.log('LOl');
-      this.auth.login(uid, pass);
-      if (this.auth.checkIfUserLoggedIn()) {
-        alert('valid user');
-        this.router.navigate(['']);
-        return;
-      }
+      // this.auth.login(uid, pass);
+      // if (this.auth.checkIfUserLoggedIn()) {
+      //   alert('valid user');
+      //   this.router.navigate(['']);
+      //   return;
+      // }
       alert('Invalid User');
       this.router.navigate(['/login']);
     });
