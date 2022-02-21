@@ -9,7 +9,7 @@ import { AuthService } from './auth.service';
 })
 export class AppComponent {
   constructor(private authService: AuthService) {}
-  title = 'Nature';
+  title = 'Quick Deal';
   isLogin!: boolean;
   user = { name: 'shubham Baliyan', email: 'shubham_baliyan@epam.com' };
   name =
