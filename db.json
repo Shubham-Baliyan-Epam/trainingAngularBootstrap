@@ -79,7 +79,7 @@
       "name": " Cap",
       "category": "kids",
       "price": 299,
-      "brand": "Rebook",
+      "brand": "Reebok",
       "rating": 5,
       "stock": 20,
       "img": "/assets/kid5.webp"
@@ -159,7 +159,7 @@
       "name": "Women pink sweatshirt",
       "category": "women",
       "price": 16000,
-      "brand": "GUCHI",
+      "brand": "GUCCI",
       "rating": 5,
       "stock": 20,
       "img": "/assets/women2.webp"
@@ -179,7 +179,7 @@
       "name": "Brown Knitted Sweater",
       "category": "women",
       "price": 100000,
-      "brand": "Versache",
+      "brand": "versace",
       "rating": 5,
       "stock": 20,
       "img": "/assets/women4.webp"
@@ -209,10 +209,70 @@
       "name": "Fur Coat",
       "category": "women",
       "price": 10000,
-      "brand": "Luis Vuitton",
+      "brand": "Louis Vuitton",
       "rating": 5,
       "stock": 20,
       "img": "/assets/women7.webp"
+    },
+    {
+      "id": 19,
+      "name": "Vintage Camera",
+      "category": "electronics",
+      "price": 10000,
+      "brand": "Sony",
+      "rating": 5,
+      "stock": 20,
+      "img": "/assets/elect1.webp"
+    },
+    {
+      "id": 20,
+      "name": "IPhone 12",
+      "category": "electronics",
+      "price": 90000,
+      "brand": "Apple",
+      "rating": 5,
+      "stock": 20,
+      "img": "/assets/elect2.webp"
+    },
+    {
+      "id": 21,
+      "name": "Headphones",
+      "category": "electronics",
+      "price": 25000,
+      "brand": "BOSE",
+      "rating": 5,
+      "stock": 20,
+      "img": "/assets/elect4.webp"
+    },
+    {
+      "id": 22,
+      "name": "Macbook Pro",
+      "category": "electronics",
+      "price": 109000,
+      "brand": " Apple",
+      "rating": 5,
+      "stock": 20,
+      "img": "/assets/elect3.webp"
+    },
+    {
+      "id": 23,
+      "name": "Keyboard",
+      "category": "electronics",
+      "price": 7000,
+      "brand": "Apple",
+      "rating": 5,
+      "stock": 20,
+      "img": "/assets/elect5.webp"
+    },
+    {
+      "id": 24,
+      "name": "Apple Air",
+      "category": "electronics",
+      "price": 200000,
+      "brand": "Apple",
+      "rating": 5,
+      "stock": 20,
+      "img": "/assets/elect6.webp"
     }
   ]
 }
