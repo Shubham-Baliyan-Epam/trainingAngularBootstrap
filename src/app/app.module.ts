@@ -23,6 +23,7 @@ import { UserService } from './user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginQueryComponent } from './login-query/login-query.component';
 import { ProductPageComponent } from './product-page/product-page.component';
+import { TodayDealsComponent } from './today-deals/today-deals.component';
 @NgModule({
   //decorator ..this provides extra data about this class
   declarations: [
@@ -45,6 +46,7 @@ import { ProductPageComponent } from './product-page/product-page.component';
     ProductComponent,
     LoginQueryComponent,
     ProductPageComponent,
+    TodayDealsComponent,
   ],
   imports: [
     BrowserModule,

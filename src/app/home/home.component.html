@@ -162,7 +162,7 @@
       </div>
     </div>
   </section>
-  <section class="formSection p-5 my-4 addBg">
+  <!-- <section class="formSection p-5 my-4 addBg">
     <div class="row p-3">
       <div class="col-md-6 col-lg-5">
         <h1 class="text-uppercase mb-3">Start Booking Now</h1>
@@ -176,7 +176,7 @@
               aria-describedby="emailHelp"
               defaultValue="{{ user.name }}"
             />
-            <!-- One way data binding -->
+            <!-- One way data binding --
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label"
@@ -189,7 +189,7 @@
               id="exampleInputPassword1"
               [(ngModel)]="email"
             />
-            <!-- these is two way binding required , name is necessary for ngModel to work -->
+            <!-- these is two way binding required , name is necessary for ngModel to work --
             {{ email }}
             <div id="emailHelp" class="form-text text-white">
               We'll never share{{ title }} your email with anyone else.
@@ -211,5 +211,8 @@
         </form>
       </div>
     </div>
+  </section> -->
+  <section class="today-deals">
+    <app-today-deals></app-today-deals>
   </section>
 </div>
