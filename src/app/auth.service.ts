@@ -16,7 +16,7 @@ interface local extends Auth {
 })
 export class AuthService {
   constructor(private router: Router, private http: HttpClient) {}
-  private baseUrl = 'http://server.transcoders.run/auth';
+  private baseUrl = 'https://server.transcoders.run/auth';
   private login = new BehaviorSubject(false);
 
   checkLogin(): Observable<boolean> {

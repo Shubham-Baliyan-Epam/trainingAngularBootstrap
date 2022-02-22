@@ -15,7 +15,7 @@ export interface User {
 export class UserService {
   constructor(private http: HttpClient) {}
   private _users = new BehaviorSubject<User[]>([]);
-  private baseUrl = 'http://server.transcoders.run/users';
+  private baseUrl = 'https://server.transcoders.run/users';
   private dataStore: { users: User[] } = { users: [] };
   readonly users = this._users.asObservable();
   getUsers() {

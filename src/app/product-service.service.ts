@@ -18,7 +18,7 @@ export interface ProductE {
 export class ProductServiceService {
   constructor(private http: HttpClient) {}
   private _products = new BehaviorSubject<ProductE[]>([]);
-  private baseUrl = 'http://server.transcoders.run/products';
+  private baseUrl = 'https://server.transcoders.run/products';
   private dataStore: { products: ProductE[] } = { products: [] };
   readonly products = this._products.asObservable();
   getProducts(query = '') {
