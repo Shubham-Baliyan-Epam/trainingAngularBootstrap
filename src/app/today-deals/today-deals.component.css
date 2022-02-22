@@ -1,0 +1,19 @@
+.card_img {
+  aspect-ratio: 3/4;
+}
+.card {
+  border: 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.card:hover {
+  box-shadow: 0 2px 16px 4px rgb(40 44 63 / 7%);
+}
+.card_brand {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+}
+.card_title {
+  font-size: 16px;
+}
