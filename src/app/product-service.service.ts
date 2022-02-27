@@ -11,6 +11,12 @@ export interface ProductE {
   brand: string;
   category: string;
   img: string;
+  description: string;
+}
+export interface ReqData {
+  status: string;
+  message?: string;
+  data?: ProductE[] | ProductE;
 }
 @Injectable({
   providedIn: 'root',
@@ -18,7 +24,7 @@ export interface ProductE {
 export class ProductServiceService {
   constructor(private http: HttpClient) {}
   private _products = new BehaviorSubject<ProductE[]>([]);
-  private baseUrl = 'https://server.transcoders.run/products';
+  private baseUrl = 'https://server.transcoders.run/product';
   private dataStore: { products: ProductE[] } = { products: [] };
   readonly products = this._products.asObservable();
   getProducts(query = '') {
@@ -27,13 +33,18 @@ export class ProductServiceService {
       url += query;
     }
 
-    this.http.get<ProductE[]>(url).subscribe(
+    this.http.get<ReqData>(url).subscribe(
       (data) => {
-        this.dataStore.products = data;
-
-        this._products.next(Object.assign({}, this.dataStore).products);
+        if (data.data && Array.isArray(data.data)) {
+          this.dataStore.products = data.data;
+          this._products.next(Object.assign({}, this.dataStore).products);
+        }
       },
       (error) => console.log('Could not load products.')
     );
+  }
+  getProduct(id: number) {
+    let url = this.baseUrl + '/' + id;
+    return this.http.get<ReqData>(url);
   }
 }
