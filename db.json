@@ -293,6 +293,18 @@
       "name": "shubham",
       "email": "lololol@lol",
       "password": "lolololol"
+    },
+    {
+      "id": 5,
+      "name": "shubam ",
+      "email": "vive@gmail.com",
+      "password": "admin12345"
+    },
+    {
+      "id": 72,
+      "name": "shubham",
+      "email": "vive@gmail.com",
+      "password": "admin1234"
     }
   ]
 }
