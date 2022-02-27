@@ -13,6 +13,6 @@ export class TodayDealsComponent implements OnInit {
 
   ngOnInit(): void {
     this.products = this.productService.products;
-    this.productService.getProducts('?_limit=4');
+    this.productService.getProducts('?limit=4');
   }
 }

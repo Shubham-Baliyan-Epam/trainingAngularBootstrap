@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <img [src]="product.img" alt="product.name" class="w-100" />
+    </div>
+    <div class="col-sm-6">
+      <h1 class="product_brand">
+        {{ product.brand }}
+      </h1>
+      <h3 class="product_name">
+        {{ product.name }}
+      </h3>
+
+      <div class="product_rating">
+        <p>{{ product.rating }} <span class="span"></span> 1.4K</p>
+      </div>
+      <hr />
+      <h2 class="product_brand">Rs.{{ product.price }}</h2>
+
+      <div class="product_buttons">
+        <button>Add to bag</button>
+        <button>Wishlist</button>
+      </div>
+    </div>
+  </div>
+</div>

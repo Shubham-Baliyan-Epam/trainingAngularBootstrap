@@ -41,7 +41,7 @@ export class ProductPageComponent implements OnInit {
       queryString += 'price_lte=' + this.range + '&';
     }
     if (this.search) {
-      queryString += 'name_like=' + this.search;
+      queryString += 'name_iLike=%' + this.search + '%';
     }
     if (queryString.length > 1) {
       this.productsService.getProducts(queryString);

@@ -16,6 +16,7 @@ import { PractiseComponent } from './practise/practise.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { ProductComponent } from './product/product.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { SingleProductComponent } from './single-product/single-product.component';
 import { TrainingComponent } from './training/training.component';
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -35,6 +36,11 @@ const routes: Routes = [
   { path: 'logger', component: LoggerComponent, pathMatch: 'full' },
   // { path: 'products', component: ProductComponent, pathMatch: 'full' },
   { path: 'products', component: ProductPageComponent, pathMatch: 'full' },
+  {
+    path: 'products/:id',
+    component: SingleProductComponent,
+    pathMatch: 'full',
+  },
 
   {
     path: 'customDirective',

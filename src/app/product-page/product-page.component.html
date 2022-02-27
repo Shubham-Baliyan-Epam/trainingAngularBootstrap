@@ -81,7 +81,7 @@
             class="col-md-3 col-lg-3 col-sm-4"
             *ngFor="let item of products | async"
           >
-            <div class="card">
+            <div class="card" [routerLink]="['/products/' + item.id]">
               <img src="{{ item.img }}" class="card_img" alt="" width="100%" />
               <div class="card-body">
                 <h3 class="card_brand">{{ item.brand }}</h3>
