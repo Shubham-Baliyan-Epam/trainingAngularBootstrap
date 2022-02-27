@@ -25,6 +25,7 @@ import { LoginQueryComponent } from './login-query/login-query.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { TodayDealsComponent } from './today-deals/today-deals.component';
 import { SingleProductComponent } from './single-product/single-product.component';
+import { CartComponent } from './cart/cart.component';
 @NgModule({
   //decorator ..this provides extra data about this class
   declarations: [
@@ -49,6 +50,7 @@ import { SingleProductComponent } from './single-product/single-product.componen
     ProductPageComponent,
     TodayDealsComponent,
     SingleProductComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

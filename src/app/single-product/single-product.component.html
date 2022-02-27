@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container my-5">
   <div class="row">
     <div class="col-sm-6">
       <img [src]="product.img" alt="product.name" class="w-100" />
@@ -11,14 +11,28 @@
         {{ product.name }}
       </h3>
 
-      <div class="product_rating">
-        <p>{{ product.rating }} <span class="span"></span> 1.4K</p>
+      <div class="product_rating border-1">
+        <p class="mb-0">
+          {{ product.rating }}
+          <svg
+            class="rating-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"
+            />
+          </svg>
+          <span class="span"></span> 1.4K
+        </p>
       </div>
       <hr />
       <h2 class="product_brand">Rs.{{ product.price }}</h2>
 
       <div class="product_buttons">
-        <button>Add to bag</button>
+        <button (click)="addToCart(product)">Add to bag</button>
         <button>Wishlist</button>
       </div>
     </div>

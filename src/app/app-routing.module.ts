@@ -19,7 +19,6 @@ import { RegistrationComponent } from './registration/registration.component';
 import { SingleProductComponent } from './single-product/single-product.component';
 import { TrainingComponent } from './training/training.component';
 const routes: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'practise', component: PractiseComponent, pathMatch: 'full' },
   { path: 'child', component: ChildComponent, pathMatch: 'full' },
   { path: 'ngStyle', component: NgStyleCompComponent, pathMatch: 'full' },
@@ -55,7 +54,8 @@ const routes: Routes = [
     loadChildren: () =>
       import('./customer/customer.module').then((m) => m.CustomerModule),
   },
-  { path: '**', component: HomeComponent },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: '**', component: HomeComponent, pathMatch: 'full' },
 ];
 
 @NgModule({

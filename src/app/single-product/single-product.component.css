@@ -1,0 +1,19 @@
+.product_brand {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+}
+.product_name {
+  font-size: 18px;
+}
+.product_rating {
+  border: 1px solid #ccc;
+  padding: 2px 5px;
+  width: max-content;
+}
+.span {
+  width: 10px;
+}
+.rating-icon {
+  fill: #03a685;
+}
