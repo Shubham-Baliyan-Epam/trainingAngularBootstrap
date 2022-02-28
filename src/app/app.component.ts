@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
-import { CartService } from './cart.service';
+import { Cart, CartService } from './cart.service';
 @Component({
   //decorator which provides meta data about the component AppComponent
   selector: 'app-root', //name given to this component
@@ -14,6 +14,7 @@ export class AppComponent {
     private cartService: CartService
   ) {}
   title = 'Quick Deal';
+  cart!: Cart;
   isLogin!: boolean;
   user = { name: 'shubham Baliyan', email: 'shubham_baliyan@epam.com' };
   name =
@@ -38,6 +39,7 @@ export class AppComponent {
     });
     this.authService.canActivate();
     this.cartService.getLocalStorage();
+    this.cartService.checkCart().subscribe((cart) => (this.cart = cart));
   }
   // ngDoCheck() {
   //   // this.checkLogin();

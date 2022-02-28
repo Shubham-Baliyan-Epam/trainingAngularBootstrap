@@ -11,3 +11,18 @@
   height: 50px;
   margin: 5px;
 }
+.circle-cart {
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 0fr;
+  border-radius: 50%;
+  z-index: 1;
+}
+/* .cartBtn {
+  position: relative;
+} */
