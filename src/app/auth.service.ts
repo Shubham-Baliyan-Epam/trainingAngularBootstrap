@@ -16,7 +16,7 @@ interface local extends Auth {
 })
 export class AuthService {
   constructor(private router: Router, private http: HttpClient) {}
-  private baseUrl = 'https://server.transcoders.run/auth';
+  private baseUrl = 'https://server.transcoders.run';
   private login = new BehaviorSubject(false);
 
   checkLogin(): Observable<boolean> {
@@ -31,13 +31,15 @@ export class AuthService {
     window.localStorage.setItem('user', newData);
   }
   doLogin(email: string, pass: string) {
-    return this.http.get<Auth[]>(`${this.baseUrl}?email=${email}`);
+    return this.http.get<Auth[]>(
+      `${this.baseUrl}/login?email=${email}&password=${pass}`
+    );
   }
   doRegister(data: Auth) {
     let headers = { 'content-type': 'application/json' };
     let body = JSON.stringify(data);
     console.log(body);
-    return this.http.post<Auth>(this.baseUrl, body, { headers });
+    return this.http.post<Auth>(this.baseUrl + '/register', body, { headers });
   }
   logout() {
     window.localStorage.removeItem('user');
