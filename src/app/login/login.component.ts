@@ -45,14 +45,14 @@ export class LoginComponent implements OnInit {
     // this.checkLogged();
     this.authservice.doLogin(this.email, this.pass).subscribe(
       (data) => {
-        if (data.length) {
-          let item = data[0];
-          if (item.password === this.pass) {
-            this.authservice.setLogin(true);
-            this.authservice.setlocalStorage({ loggedIn: true, ...data[0] });
-            this.route.navigate(['/']);
-          }
-        }
+        // if (data.length) {
+        //   let item = data[0];
+        //   if (item.password === this.pass) {
+        this.authservice.setLogin(true);
+        this.authservice.setlocalStorage({ loggedIn: true, ...data[0] });
+        this.route.navigate(['/']);
+        // }
+        // }
       },
       (err) => {}
     );

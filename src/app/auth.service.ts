@@ -6,7 +6,7 @@ export interface Auth {
   name: string;
   id: number;
   email: string;
-  password: string;
+  password?: string;
 }
 interface local extends Auth {
   loggedIn: boolean;
@@ -39,7 +39,11 @@ export class AuthService {
     let headers = { 'content-type': 'application/json' };
     let body = JSON.stringify(data);
     console.log(body);
-    return this.http.post<Auth>(this.baseUrl + '/register', body, { headers });
+    return this.http.post<{
+      status: string;
+      message: string;
+      data: { id: number; name: string; email: string };
+    }>(this.baseUrl + '/register', body, { headers });
   }
   logout() {
     window.localStorage.removeItem('user');

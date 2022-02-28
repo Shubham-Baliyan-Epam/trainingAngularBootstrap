@@ -35,8 +35,10 @@ export class RegistrationComponent implements OnInit {
     console.log('password', form.value.password);
     this.authService.doRegister({ id, ...form.value }).subscribe(
       (data) => {
+        console.log('hi,==============');
         this.msg = 'Successfully Registered ';
-        this.authService.setlocalStorage({ loggedIn: true, ...data });
+        this.authService.setLogin(true);
+        this.authService.setlocalStorage({ loggedIn: true, ...data.data });
         this.router.navigate(['/']);
       },
       (err) => {
