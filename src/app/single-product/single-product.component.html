@@ -12,7 +12,7 @@
       </h3>
 
       <div class="product_rating border-1">
-        <p class="mb-0">
+        <p class="mb-0 d-flex align-items-center">
           {{ product.rating }}
           <svg
             class="rating-icon"
@@ -32,8 +32,76 @@
       <h2 class="product_brand">Rs.{{ product.price }}</h2>
 
       <div class="product_buttons">
-        <button (click)="addToCart(product)">Add to bag</button>
-        <button>Wishlist</button>
+        <button
+          (click)="addToCart(product)"
+          class="btn-myn d-flex align-items-center justify-content-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            enable-background="new 0 0 50 50"
+            height="20px"
+            class="bag-icon"
+            id="Layer_1"
+            version="1.1"
+            viewBox="0 0 50 50"
+            width="20px"
+            xml:space="preserve"
+          >
+            <path
+              d="M8,14L4,49h42l-4-35H8z"
+              fill="none"
+              stroke="#fff"
+              stroke-linecap="round"
+              stroke-miterlimit="10"
+              stroke-width="3"
+            />
+            <rect fill="none" height="50" width="50" />
+            <path
+              d="M34,19c0-1.241,0-6.759,0-8  c0-4.971-4.029-9-9-9s-9,4.029-9,9c0,1.241,0,6.759,0,8"
+              fill="none"
+              stroke="#fff"
+              stroke-linecap="round"
+              stroke-miterlimit="10"
+              stroke-width="3"
+            />
+            <circle cx="34" cy="19" r="2" />
+            <circle cx="16" cy="19" r="2" />
+          </svg>
+          Add to bag
+        </button>
+        <button
+          class="btn-wish d-flex align-items-center justify-content-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:cc="http://creativecommons.org/ns#"
+            xmlns:dc="http://purl.org/dc/elements/1.1/"
+            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+            height="20"
+            class="me-2"
+            viewBox="0 0 24 24"
+            version="1.1"
+            width="20"
+          >
+            <g transform="translate(0 -1028.4)">
+              <path
+                d="m7 1031.4c-1.5355 0-3.0784 0.5-4.25 1.7-2.3431 2.4-2.2788 6.1 0 8.5l9.25 9.8 9.25-9.8c2.279-2.4 2.343-6.1 0-8.5-2.343-2.3-6.157-2.3-8.5 0l-0.75 0.8-0.75-0.8c-1.172-1.2-2.7145-1.7-4.25-1.7z"
+                fill="#ff3f6c"
+              />
+            </g>
+          </svg>
+          Wishlist
+        </button>
+      </div>
+
+      <hr />
+      <div class="product_desc">
+        <p>Product Overview</p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime quo
+        ducimus id eos provident eligendi accusamus numquam quos quasi
+        dignissimos minima deserunt impedit harum ut, voluptate voluptatem eaque
+        explicabo est.
       </div>
     </div>
   </div>

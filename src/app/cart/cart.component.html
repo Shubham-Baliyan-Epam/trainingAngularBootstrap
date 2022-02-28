@@ -1,1 +1,57 @@
-<p>cart works!</p>
+<div class="my-3 container">
+  <div class="row">
+    <h2 class="text-center mb-5">Your Bag</h2>
+    <div class="col-sm-6">
+      <div class="cart" *ngIf="cart.products.length">
+        <div class="cart_items mb-2" *ngFor="let item of cart.products">
+          <img [src]="item.img" width="150" height="200" />
+          <div class="cart_item-details">
+            <h2>{{ item.brand }}</h2>
+
+            <div class="price_details"></div>
+            <h2 class="light">
+              {{ item.name }}
+            </h2>
+            <h2>Rs.{{ item.price }}</h2>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            data-name="Capa 1"
+            (click)="removeItem(item.id)"
+            class="close-icon ms-auto"
+            id="Capa_1"
+            viewBox="0 0 20 19.84"
+          >
+            <path
+              d="M10.17,10l3.89-3.89a.37.37,0,1,0-.53-.53L9.64,9.43,5.75,5.54a.37.37,0,1,0-.53.53L9.11,10,5.22,13.85a.37.37,0,0,0,0,.53.34.34,0,0,0,.26.11.36.36,0,0,0,.27-.11l3.89-3.89,3.89,3.89a.34.34,0,0,0,.26.11.35.35,0,0,0,.27-.11.37.37,0,0,0,0-.53Z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4">
+      <div class="cart_pricing">
+        <h3>Price Details</h3>
+        <div class="price_details">
+          <p>Total Mrp</p>
+          <p>Rs 1449</p>
+        </div>
+        <div class="price_details">
+          <p>Discount on Mrp</p>
+          <p>Rs 0</p>
+        </div>
+        <div class="price_details">
+          <p>Convience Fee</p>
+          <p>Rs 99</p>
+        </div>
+        <hr />
+        <div class="price_details">
+          <h6>Total Amount</h6>
+          <p>Rs 1598</p>
+        </div>
+        <button class="btn-myn">Place Order</button>
+      </div>
+    </div>
+  </div>
+</div>

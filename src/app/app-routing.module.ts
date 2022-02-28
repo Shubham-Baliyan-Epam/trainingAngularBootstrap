@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AuthService } from './auth.service';
+import { CartComponent } from './cart/cart.component';
 import { ChildComponent } from './child/child.component';
 import { ClassWorkComponent } from './class-work/class-work.component';
 import { CustomDirectiveComponent } from './custom-directive/custom-directive.component';
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'logger', component: LoggerComponent, pathMatch: 'full' },
   // { path: 'products', component: ProductComponent, pathMatch: 'full' },
   { path: 'products', component: ProductPageComponent, pathMatch: 'full' },
+  { path: 'cart', component: CartComponent, pathMatch: 'full' },
   {
     path: 'products/:id',
     component: SingleProductComponent,

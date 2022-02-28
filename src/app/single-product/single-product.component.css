@@ -12,8 +12,48 @@
   width: max-content;
 }
 .span {
-  width: 10px;
+  width: 3px;
+  height: 20px;
+  background-color: #eee;
+  margin: 0 5px;
 }
+
 .rating-icon {
   fill: #03a685;
+  height: 18px;
+  width: 18px;
+  margin: 0 2px;
+}
+.btn-myn {
+  background: #ff3f6c;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  width: 100%;
+  margin-right: 5px;
+  border-radius: 2px;
+}
+.btn-wish {
+  background: #fff;
+  color: #333;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 2px;
+}
+.product_buttons {
+  display: flex;
+  margin-top: 10px;
+}
+.product_desc {
+  margin-top: 10px;
+}
+.product_desc p {
+  color: #333;
+}
+.bag-icon {
+  fill: #fff;
+  margin-right: 5px;
 }
