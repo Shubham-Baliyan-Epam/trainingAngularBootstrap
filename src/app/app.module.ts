@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PractiseComponent } from './practise/practise.component';
@@ -26,6 +25,9 @@ import { ProductPageComponent } from './product-page/product-page.component';
 import { TodayDealsComponent } from './today-deals/today-deals.component';
 import { SingleProductComponent } from './single-product/single-product.component';
 import { CartComponent } from './cart/cart.component';
+import { MatSliderModule } from '@angular/material/slider';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
   //decorator ..this provides extra data about this class
   declarations: [
@@ -53,11 +55,13 @@ import { CartComponent } from './cart/cart.component';
     CartComponent,
   ],
   imports: [
+    MatSnackBarModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
   ], //these modules are imported in the current angular project
   providers: [], // for services
   bootstrap: [AppComponent], //which component will be loaded first in memmory from this module

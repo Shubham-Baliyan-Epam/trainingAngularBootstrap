@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from './auth.service';
 import { Cart, CartService } from './cart.service';
 @Component({
@@ -11,7 +11,8 @@ import { Cart, CartService } from './cart.service';
 export class AppComponent {
   constructor(
     private authService: AuthService,
-    private cartService: CartService
+    private cartService: CartService,
+    private activatedRoute: ActivatedRoute
   ) {}
   title = 'Quick Deal';
   cart!: Cart;
@@ -37,6 +38,9 @@ export class AppComponent {
       this.isLogin = login;
       console.log(this.isLogin, login);
     });
+    this.activatedRoute.url.subscribe((url) =>
+      console.log(url, '===================')
+    );
     this.authService.canActivate();
     this.cartService.getLocalStorage();
     this.cartService.checkCart().subscribe((cart) => (this.cart = cart));

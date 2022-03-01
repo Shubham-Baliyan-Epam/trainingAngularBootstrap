@@ -48,9 +48,9 @@ const routes: Routes = [
     component: CustomDirectiveComponent,
     pathMatch: 'full',
   },
-  { path: 'empTable/:login', component: EmpRecordComponent },
-  { path: 'loginQuery', component: LoginQueryComponent },
-  { path: 'empTable', component: EmpRecordComponent },
+  { path: 'empTable/:login', component: EmpRecordComponent, pathMatch: 'full' },
+  { path: 'loginQuery', component: LoginQueryComponent, pathMatch: 'full' },
+  { path: 'empTable', component: EmpRecordComponent, pathMatch: 'full' },
   {
     path: 'customer',
     loadChildren: () =>
