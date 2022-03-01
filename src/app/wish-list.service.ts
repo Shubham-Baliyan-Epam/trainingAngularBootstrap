@@ -3,32 +3,29 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { ProductE } from './product-service.service';
 
 export interface WishList {
-  products: WishProduct[];
+  products: ProductE[];
 }
-interface WishProduct extends ProductE {
-  qty: number;
-}
+
 @Injectable({
   providedIn: 'root',
 })
 export class WishListService {
   constructor() {}
   private wishList = new BehaviorSubject<WishList>({ products: [] });
-  private dataStore: { products: WishProduct[] } = { products: [] };
+  private dataStore: { products: ProductE[] } = { products: [] };
 
   checkWishList(): Observable<WishList> {
     return this.wishList.asObservable();
   }
-  setWishList(val: WishProduct) {
+  setWishList(val: ProductE) {
     if (
-      this.dataStore.products.findIndex((item) => item.id === val.id) !== -1
+      this.dataStore.products.findIndex((item) => item.id === val.id) === -1
     ) {
-      this.dataStore.products.push({ ...val, qty: ++val.qty });
-    } else {
       this.dataStore.products.push(val);
+
+      this.wishList.next(Object.assign({}, this.dataStore));
+      this.setlocalStorage(this.dataStore);
     }
-    this.wishList.next(Object.assign({}, this.dataStore));
-    this.setlocalStorage(this.dataStore);
   }
   setlocalStorage(data: WishList) {
     let newData = JSON.stringify(data);

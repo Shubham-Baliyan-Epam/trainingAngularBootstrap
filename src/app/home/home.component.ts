@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,14 +7,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class HomeComponent implements OnInit {
   durationInSeconds = 5;
 
-  constructor(private _snackBar: MatSnackBar) {}
+  constructor() {}
 
-  openSnackBar() {
-    this._snackBar.open('Hello hi', 'undo', {
-      horizontalPosition: 'right',
-      verticalPosition: 'top',
-    });
-  }
   // constructor() {}
   title = 'Nature';
   email = '';

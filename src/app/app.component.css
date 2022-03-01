@@ -14,11 +14,12 @@
 .circle-cart {
   width: 15px;
   height: 15px;
-  background-color: #fff;
+  background-color: #ff3f6c;
   font-size: 10px;
   font-weight: bold;
   position: absolute;
   top: 0;
+  color: white;
   right: 0fr;
   border-radius: 50%;
   z-index: 1;
