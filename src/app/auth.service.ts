@@ -11,6 +11,11 @@ export interface Auth {
 interface local extends Auth {
   loggedIn: boolean;
 }
+interface Res {
+  status: string;
+  message: string;
+  data: Auth;
+}
 @Injectable({
   providedIn: 'root',
 })
@@ -31,7 +36,7 @@ export class AuthService {
     window.localStorage.setItem('user', newData);
   }
   doLogin(email: string, pass: string) {
-    return this.http.get<Auth[]>(
+    return this.http.get<Res>(
       `${this.baseUrl}/login?email=${email}&password=${pass}`
     );
   }
@@ -39,16 +44,18 @@ export class AuthService {
     let headers = { 'content-type': 'application/json' };
     let body = JSON.stringify(data);
     console.log(body);
-    return this.http.post<{
-      status: string;
-      message: string;
-      data: { id: number; name: string; email: string };
-    }>(this.baseUrl + '/register', body, { headers });
+    return this.http.post<Res>(this.baseUrl + '/register', body, { headers });
   }
   logout() {
     window.localStorage.removeItem('user');
   }
-
+  getUser() {
+    let data = window.localStorage.getItem('user');
+    if (data) {
+      return JSON.parse(data);
+    }
+    return null;
+  }
   canActivate(): boolean {
     let login: local | string | null = window.localStorage.getItem('user');
     if (login) {

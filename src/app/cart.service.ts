@@ -26,6 +26,12 @@ export class CartService {
       this.setlocalStorage(this.dataStore);
     }
   }
+  refereshCart() {
+    this.dataStore.products = [];
+
+    this.cart.next(Object.assign({}, this.dataStore));
+    this.setlocalStorage(this.dataStore);
+  }
 
   setlocalStorage(data: Cart) {
     let newData = JSON.stringify(data);

@@ -23,16 +23,10 @@ export class ProductPageComponent implements OnInit {
     this.products = this.productsService.products;
     this.productsService.getProducts();
   }
-  // ngDoCheck() {
-  //   console.log(
-  //     'category',
-  //     this.category,
-  //     this.electronics,
-  //     this.mens,
-  //     this.women,
-  //     this.kids
-  //   );
-  // }
+
+  setRating(val: number) {
+    this.rating = val;
+  }
   searchTheProducts() {
     let queryString = '?';
     if (this.category) {
@@ -42,7 +36,10 @@ export class ProductPageComponent implements OnInit {
       queryString += 'price_lte=' + this.range + '&';
     }
     if (this.search) {
-      queryString += 'name_iLike=%' + this.search + '%';
+      queryString += 'name_iLike=%' + this.search + '%' + '&';
+    }
+    if (this.rating) {
+      queryString += 'rating=' + this.rating;
     }
     if (queryString.length > 1) {
       this.productsService.getProducts(queryString);

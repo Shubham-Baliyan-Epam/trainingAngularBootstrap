@@ -66,6 +66,74 @@
           />
           <label class="form-check-label" for="kids"> Kids </label>
         </div>
+        <p class="my-2 mx-2">Rating</p>
+        <div class="d-flex mb-3 mx-1">
+          <svg
+            [ngClass]="rating >= 1 ? 'filled' : ''"
+            (click)="setRating(1)"
+            class="rating-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"
+            />
+          </svg>
+          <svg
+            [ngClass]="rating >= 2 ? 'filled' : ''"
+            class="rating-icon"
+            (click)="setRating(2)"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"
+            />
+          </svg>
+          <svg
+            (click)="setRating(3)"
+            [ngClass]="rating >= 3 ? 'filled' : ''"
+            class="rating-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"
+            />
+          </svg>
+          <svg
+            [ngClass]="rating >= 4 ? 'filled' : ''"
+            class="rating-icon"
+            (click)="setRating(4)"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"
+            />
+          </svg>
+          <svg
+            [ngClass]="rating >= 5 ? 'filled' : ''"
+            class="rating-icon"
+            (click)="setRating(5)"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"
+            />
+          </svg>
+        </div>
         <!-- <div>
           <ngx-star-rating [(ngModel)]="rating"></ngx-star-rating>
         </div> -->

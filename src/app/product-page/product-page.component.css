@@ -17,3 +17,12 @@
 .card_title {
   font-size: 16px;
 }
+.rating-icon {
+  height: 18px;
+  fill: #ccc;
+  width: 18px;
+  margin: 0 2px;
+}
+.filled {
+  fill: #03a685;
+}
