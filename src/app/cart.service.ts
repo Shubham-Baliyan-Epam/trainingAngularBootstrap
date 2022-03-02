@@ -17,10 +17,14 @@ export class CartService {
     return this.cart.asObservable();
   }
   setCart(val: ProductE) {
-    this.dataStore.products.push(val);
+    if (
+      this.dataStore.products.findIndex((item) => item.id === val.id) === -1
+    ) {
+      this.dataStore.products.push(val);
 
-    this.cart.next(Object.assign({}, this.dataStore));
-    this.setlocalStorage(this.dataStore);
+      this.cart.next(Object.assign({}, this.dataStore));
+      this.setlocalStorage(this.dataStore);
+    }
   }
 
   setlocalStorage(data: Cart) {

@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row justify-content-center my-5 p-5">
+    <h3 class="my-3 text-center">Shipping details</h3>
+
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="mb-3">
+            <label for="address1" class="form-label">Address line 1</label>
+            <input
+              type="text"
+              class="form-control"
+              id="address1"
+              formControlName="address1"
+              placeholder="Address line 1"
+              aria-describedby="nameHelp"
+            />
+            <div
+              id="nameHelp"
+              class="form-text text-danger"
+              *ngIf="
+                myForm.get('address1')?.invalid &&
+                (myForm.get('address1')?.dirty ||
+                  myForm.get('address1')?.touched)
+              "
+            >
+              Please provide address.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="address2" class="form-label">Address line 2</label>
+            <input
+              type="text"
+              class="form-control"
+              id="address2"
+              formControlName="address2"
+              placeholder="Your address2"
+              aria-describedby="address2Help"
+            />
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="cart_pricing">
+            <h3>Price Details</h3>
+            <div class="price_details">
+              <p>Total Mrp</p>
+              <p>Rs {{ total }}</p>
+            </div>
+            <div class="price_details">
+              <p>Discount on Mrp</p>
+              <p>Rs 0</p>
+            </div>
+            <div class="price_details">
+              <p>Convience Fee</p>
+              <p>Rs 99</p>
+            </div>
+            <hr />
+            <div class="price_details">
+              <h6>Total Amount</h6>
+              <p>Rs {{ total ? total + 99 : 0 }}</p>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-myn" [disabled]="myForm.invalid">
+            Checkout
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
