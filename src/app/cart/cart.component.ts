@@ -8,6 +8,7 @@ import { Cart, CartService } from '../cart.service';
 })
 export class CartComponent implements OnInit {
   cart!: Cart;
+  total: number = 0;
   constructor(private cartService: CartService) {}
   removeItem(id: number) {
     this.cartService.removeItemFromCart(id);
@@ -15,6 +16,10 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.cartService.checkCart().subscribe((cart) => {
       this.cart = cart;
+      this.total = this.cart.products.reduce(
+        (acc, curr) => (acc += curr.price),
+        0
+      );
     });
   }
 }

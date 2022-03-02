@@ -1,5 +1,13 @@
 <div class="my-3 container">
-  <div class="row">
+  <div
+    class="row bg-white rounded shadow-sm"
+    *ngIf="cart.products.length === 0"
+  >
+    <h2 class="text-center my-4 fw-bold">Your cart is empty !!!</h2>
+    <img src="../../assets/emptyCart.png" class="cartImage" />
+  </div>
+
+  <div class="row" *ngIf="cart.products.length !== 0">
     <h2 class="text-center mb-5">Your Bag</h2>
     <div class="col-sm-6">
       <div class="cart" *ngIf="cart.products.length">
@@ -35,7 +43,7 @@
         <h3>Price Details</h3>
         <div class="price_details">
           <p>Total Mrp</p>
-          <p>Rs 1449</p>
+          <p>Rs {{ total }}</p>
         </div>
         <div class="price_details">
           <p>Discount on Mrp</p>
@@ -48,7 +56,7 @@
         <hr />
         <div class="price_details">
           <h6>Total Amount</h6>
-          <p>Rs 1598</p>
+          <p>Rs {{ total + 99 }}</p>
         </div>
         <button class="btn-myn" [routerLink]="['/checkout']">
           Place Order

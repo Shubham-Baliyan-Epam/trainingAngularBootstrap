@@ -5,6 +5,7 @@ import { forkJoin } from 'rxjs';
 import { AuthService } from '../auth.service';
 import { Cart, CartService } from '../cart.service';
 import { CheckoutService } from '../checkout.service';
+import { EmailService } from '../email.service';
 
 @Component({
   selector: 'app-checkout',
@@ -17,7 +18,8 @@ export class CheckoutComponent implements OnInit {
     private cartService: CartService,
     private checkoutService: CheckoutService,
     private activateRoute: ActivatedRoute,
-    private authService: AuthService
+    private authService: AuthService,
+    private emailService: EmailService
   ) {}
   myForm!: FormGroup;
   cart!: Cart;
@@ -72,6 +74,11 @@ export class CheckoutComponent implements OnInit {
     forkJoin(
       arrData.map((item) => this.checkoutService.checkout(item))
     ).subscribe((res) => {
+      this.emailService.sendEmail(
+        this.user.email,
+        'Order Placed',
+        'Thankyou for placing the order'
+      );
       console.log(res, '+=======================');
       this.cartService.refereshCart();
     });
