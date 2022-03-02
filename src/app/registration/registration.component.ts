@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, take } from 'rxjs';
 import { AuthService } from '../auth.service';
+import { EmailService } from '../email.service';
 
 @Component({
   selector: 'app-registration',
@@ -16,7 +17,8 @@ export class RegistrationComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private emailService: EmailService
   ) {}
 
   ngOnInit(): void {
@@ -37,6 +39,15 @@ export class RegistrationComponent implements OnInit {
       (data) => {
         console.log('hi,==============');
         this.msg = 'Successfully Registered ';
+        this.emailService
+          .sendEmail(
+            data.data.email,
+            'Registered successfully',
+            'Welcome to Quick Deal'
+          )
+          .subscribe(() => {
+            console.log('email sent');
+          });
         this.authService.setLogin(true);
         this.authService.setlocalStorage({ loggedIn: true, ...data.data });
         this.router.navigate(['/']);
