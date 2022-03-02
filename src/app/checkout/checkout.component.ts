@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { forkJoin } from 'rxjs';
+import { AuthService } from '../auth.service';
 import { Cart, CartService } from '../cart.service';
+import { CheckoutService } from '../checkout.service';
 
 @Component({
   selector: 'app-checkout',
@@ -8,16 +12,36 @@ import { Cart, CartService } from '../cart.service';
   styleUrls: ['./checkout.component.css'],
 })
 export class CheckoutComponent implements OnInit {
-  constructor(private fb: FormBuilder, private cartService: CartService) {}
+  constructor(
+    private fb: FormBuilder,
+    private cartService: CartService,
+    private checkoutService: CheckoutService,
+    private activateRoute: ActivatedRoute,
+    private authService: AuthService
+  ) {}
   myForm!: FormGroup;
   cart!: Cart;
+  user: any;
   total: number = 0;
   ngOnInit(): void {
+    this.activateRoute.queryParams.subscribe((params) => {
+      console.log(params, 'QUEYR  NSAJNKSANDKN');
+    });
+    this.user = this.authService.getUser();
     this.cartService.checkCart().subscribe((cart) => {
       this.cart = cart;
       this.calculateTotal();
     });
     this.myForm = this.fb.group({
+      name: ['', Validators.required],
+      mobile: [
+        '',
+        [
+          Validators.required,
+          Validators.maxLength(10),
+          Validators.minLength(10),
+        ],
+      ],
       address1: ['', Validators.required],
       address2: [''],
     });
@@ -31,6 +55,30 @@ export class CheckoutComponent implements OnInit {
     // console.log('Valid?', form.valid, form.value); // true or false
     console.log('Name', form.value.address1);
     console.log('Email', form.value.address2);
+    let data = {
+      user_id: this.user.id,
+      name: form.value.name,
+      address1: form.value.address1,
+      address2: form.value.address2,
+      mobile: form.value.mobile,
+    };
+    let arrData = this.cart.products.map((item) => {
+      return {
+        ...data,
+        sale_price: item.price,
+        product_id: item.id,
+      };
+    });
+    forkJoin(
+      arrData.map((item) => this.checkoutService.checkout(item))
+    ).subscribe((res) => {
+      console.log(res, '+=======================');
+      this.cartService.refereshCart();
+    });
+
+    // this.checkoutService.checkout().subscribe((res) => {
+    //   console.log('checkout done', res);
+    // });
     // let id = Math.floor(Math.random() * 100 + 1);
   }
 }

@@ -11,6 +11,7 @@ export class ProductPageComponent implements OnInit {
   products!: Observable<ProductE[]>;
   constructor(private productsService: ProductServiceService) {}
   range: number = 0;
+  rating: number = 5;
   search: string = '';
   electronics: boolean = false;
   mens: boolean = false;

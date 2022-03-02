@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row justify-content-center my-5 p-5">
-    <div class="col-lg-6">
-      <h3 class="my-3 text-center">Register</h3>
-
+    <div class="col-sm-6 bgImage rounded shadow-sm"></div>
+    <div class="col-sm-6 p-5 rounded bg-white shadow-sm">
+      <h3 class="my-3 login-heading">Register</h3>
       <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
         <div class="mb-3">
           <label for="name" class="form-label">Name</label>
@@ -71,14 +71,12 @@
         </div>
         <button
           type="submit"
-          class="btn btn-primary d-block"
+          class="btn btn-primary d-block rounded w-100"
           [disabled]="myForm.invalid"
         >
-          Submit
+          Sign up
         </button>
-        <p class="form-text">
-          Already a user ? <a routerLink="/login">Login</a>
-        </p>
+        <p class="text">Already a user ? <a routerLink="/login">Login</a></p>
       </form>
     </div>
   </div>

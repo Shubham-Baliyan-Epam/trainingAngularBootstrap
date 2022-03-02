@@ -1,22 +1,66 @@
 <div class="container">
-  <div class="row justify-content-center my-5 p-5">
-    <h3 class="my-3 text-center">Shipping details</h3>
+  <div
+    class="row justify-content-center my-5 p-5 bg-white rounded shadow-light"
+  >
+    <h3 class="my-3">Shipping details</h3>
 
     <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
       <div class="row">
         <div class="col-lg-6">
           <div class="mb-3">
-            <label for="address1" class="form-label">Address line 1</label>
+            <!-- <label for="name" class="form-label">Full Name</label> -->
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              formControlName="name"
+              placeholder="Full Name"
+              aria-describedby="nameHelp"
+            />
+            <div
+              id="nameHelp"
+              class="form-text text-danger"
+              *ngIf="
+                myForm.get('name')?.invalid &&
+                (myForm.get('name')?.dirty || myForm.get('name')?.touched)
+              "
+            >
+              Please provide Full Name.
+            </div>
+          </div>
+          <div class="mb-3">
+            <!-- <label for="mobile" class="form-label">Mobile No.</label> -->
+            <input
+              type="text"
+              class="form-control"
+              id="mobile"
+              formControlName="mobile"
+              placeholder="Mobile number"
+              aria-describedby="mobileHelp"
+            />
+            <div
+              id="mobileHelp"
+              class="form-text text-danger"
+              *ngIf="
+                myForm.get('mobile')?.invalid &&
+                (myForm.get('mobile')?.dirty || myForm.get('mobile')?.touched)
+              "
+            >
+              Please Mobile Number.
+            </div>
+          </div>
+          <div class="mb-3">
+            <!-- <label for="address1" class="form-label">Address line 1</label> -->
             <input
               type="text"
               class="form-control"
               id="address1"
               formControlName="address1"
               placeholder="Address line 1"
-              aria-describedby="nameHelp"
+              aria-describedby="addressHelp"
             />
             <div
-              id="nameHelp"
+              id="addressHelp"
               class="form-text text-danger"
               *ngIf="
                 myForm.get('address1')?.invalid &&
@@ -28,7 +72,7 @@
             </div>
           </div>
           <div class="mb-3">
-            <label for="address2" class="form-label">Address line 2</label>
+            <!-- <label for="address2" class="form-label">Address line 2</label> -->
             <input
               type="text"
               class="form-control"
@@ -67,5 +111,13 @@
         </div>
       </div>
     </form>
+    <!-- <form
+      #form
+      action="http://localhost:8080/create-checkout-session"
+      method="POST"
+    >
+      <button type="submit" (click)="form.submit()
+      ">Checkout</button>
+    </form> -->
   </div>
 </div>
