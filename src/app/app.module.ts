@@ -2,30 +2,19 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PractiseComponent } from './practise/practise.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ChildComponent } from './child/child.component';
-import { NgStyleCompComponent } from './ng-style-comp/ng-style-comp.component';
-import { EmpRecordComponent } from './emp-record/emp-record.component';
-import { ClassWorkComponent } from './class-work/class-work.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { PipesComponent } from './pipes/pipes.component';
 import { CustomPipePipe } from './custom-pipe.pipe';
-import { CustomDirectiveComponent } from './custom-directive/custom-directive.component';
 import { CustDirectiveDirective } from './cust-directive.directive';
-import { TrainingComponent } from './training/training.component';
-import { LoggerComponent } from './logger/logger.component';
 import { ProductComponent } from './product/product.component';
 import { UserService } from './user.service';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginQueryComponent } from './login-query/login-query.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { TodayDealsComponent } from './today-deals/today-deals.component';
 import { SingleProductComponent } from './single-product/single-product.component';
 import { CartComponent } from './cart/cart.component';
-import { MatSliderModule } from '@angular/material/slider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CheckoutComponent } from './checkout/checkout.component';
@@ -35,22 +24,12 @@ import { MyorderComponent } from './myorder/myorder.component';
   declarations: [
     //this are components which are inside  this module
     AppComponent,
-    PractiseComponent,
     HomeComponent,
-    ChildComponent,
-    NgStyleCompComponent,
-    EmpRecordComponent,
-    ClassWorkComponent,
     LoginComponent,
     RegistrationComponent,
-    PipesComponent,
     CustomPipePipe,
-    CustomDirectiveComponent,
     CustDirectiveDirective,
-    TrainingComponent,
-    LoggerComponent,
     ProductComponent,
-    LoginQueryComponent,
     ProductPageComponent,
     TodayDealsComponent,
     SingleProductComponent,
