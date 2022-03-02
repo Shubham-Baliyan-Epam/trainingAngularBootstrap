@@ -14,6 +14,6 @@ export class CheckoutService {
     return this.http.post<any>(this.url, body, { headers });
   }
   getOrderDataByUser(id: number) {
-    return this.http.get(this.url + '/user/' + id);
+    return this.http.get<any>(this.url + '/user/' + id);
   }
 }
