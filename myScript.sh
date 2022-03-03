@@ -1,5 +1,5 @@
 #!/bin/sh
-npm install
+#npm install
 sudo rm -r dist/
 npm run build --prod
 sudo rm -r /var/www/$1
