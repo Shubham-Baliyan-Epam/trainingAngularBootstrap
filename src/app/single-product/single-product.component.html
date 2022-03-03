@@ -1,19 +1,24 @@
 <div class="container my-5">
   <div class="row">
     <div class="col-sm-6">
-      <img [src]="product.img" alt="product.name" class="w-100" />
+      <img
+        *ngIf="product?.img"
+        [src]="product.img"
+        alt="product.name"
+        class="w-100"
+      />
     </div>
     <div class="col-sm-6">
       <h1 class="product_brand">
-        {{ product.brand }}
+        {{ product?.brand }}
       </h1>
       <h3 class="product_name">
-        {{ product.name }}
+        {{ product?.name }}
       </h3>
 
       <div class="product_rating border-1">
         <p class="mb-0 d-flex align-items-center">
-          {{ product.rating }}
+          {{ product?.rating }}
           <svg
             class="rating-icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +34,7 @@
         </p>
       </div>
       <hr />
-      <h2 class="product_brand">Rs.{{ product.price }}</h2>
+      <h2 class="product_brand">Rs.{{ product?.price }}</h2>
 
       <div class="product_buttons">
         <button
