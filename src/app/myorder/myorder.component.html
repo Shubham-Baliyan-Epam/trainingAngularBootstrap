@@ -1,1 +1,26 @@
-<p>myorder works!</p>
+<div class="container my-3">
+  <h2>My Orders</h2>
+
+  <div
+    class="row mb-3 rounded bg-white shadow-sm w-50"
+    *ngFor="let item of orders"
+  >
+    <div class="col-2 p-0">
+      <img class="img-fluid d-block" [src]="item.img" />
+    </div>
+    <div class="col-3">
+      <p>{{ item.name }}</p>
+      <p>{{ item.brand }}</p>
+      <p>{{ item.category }}</p>
+      <p>Rs{{ item.sale_price }}</p>
+    </div>
+    <div class="col-3">
+      {{ item.address1 }}
+      {{ moment(item.order_date).format("DD/MM/YY") }}
+      {{ moment(item.order_date).add(3, "days").format("DD/MM/YY") }}
+    </div>
+    <div class="col-3">
+      {{ getStatus(item.order_date) }}
+    </div>
+  </div>
+</div>
