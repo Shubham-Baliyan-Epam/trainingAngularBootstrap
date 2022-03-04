@@ -25,6 +25,7 @@ export class AuthService {
   private login = new BehaviorSubject(false);
 
   checkLogin(): Observable<boolean> {
+    console.log('IAM CALEED SUBJECT BEHAVOIR');
     return this.login.asObservable();
   }
   setLogin(val: boolean) {
@@ -45,6 +46,11 @@ export class AuthService {
     let body = JSON.stringify(data);
     console.log(body);
     return this.http.post<Res>(this.baseUrl + '/register', body, { headers });
+  }
+  updateUser(id: number, data: any) {
+    let headers = { 'content-type': 'application/json' };
+    let body = JSON.stringify(data);
+    return this.http.put(this.baseUrl + '/user/' + id, body, { headers });
   }
   logout() {
     window.localStorage.removeItem('user');

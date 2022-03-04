@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { forkJoin } from 'rxjs';
 import { AuthService } from '../auth.service';
 import { Cart, CartService } from '../cart.service';
@@ -19,7 +19,8 @@ export class CheckoutComponent implements OnInit {
     private checkoutService: CheckoutService,
     private activateRoute: ActivatedRoute,
     private authService: AuthService,
-    private emailService: EmailService
+    private emailService: EmailService,
+    private router: Router
   ) {}
   myForm!: FormGroup;
   cart!: Cart;
@@ -63,6 +64,7 @@ export class CheckoutComponent implements OnInit {
       address1: form.value.address1,
       address2: form.value.address2,
       mobile: form.value.mobile,
+      order_date: new Date(),
     };
     let arrData = this.cart.products.map((item) => {
       return {
@@ -80,6 +82,7 @@ export class CheckoutComponent implements OnInit {
         'Thankyou for placing the order'
       );
       console.log(res, '+=======================');
+      this.router.navigate(['/products']);
       this.cartService.refereshCart();
     });
 

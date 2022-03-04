@@ -1,26 +1,35 @@
 <div class="container my-3">
-  <h2>My Orders</h2>
-
-  <div
-    class="row mb-3 rounded bg-white shadow-sm w-50"
-    *ngFor="let item of orders"
-  >
-    <div class="col-2 p-0">
-      <img class="img-fluid d-block" [src]="item.img" />
-    </div>
-    <div class="col-3">
-      <p>{{ item.name }}</p>
-      <p>{{ item.brand }}</p>
-      <p>{{ item.category }}</p>
-      <p>Rs{{ item.sale_price }}</p>
-    </div>
-    <div class="col-3">
-      {{ item.address1 }}
-      {{ moment(item.order_date).format("DD/MM/YY") }}
-      {{ moment(item.order_date).add(3, "days").format("DD/MM/YY") }}
-    </div>
-    <div class="col-3">
-      {{ getStatus(item.order_date) }}
+  <h2 class="text-center fw-bold my-4">My Orders</h2>
+  <div class="row">
+    <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6 mx-auto">
+      <div
+        class="row mb-3 rounded bg-white shadow-sm animate__animated animate__fadeInUp"
+        *ngFor="let item of orders"
+      >
+        <div class="col-2 p-0">
+          <img class="img-fluid d-block" [src]="item.img" />
+        </div>
+        <div class="col-5 p-3">
+          <p class="name">{{ item.name }}</p>
+          <p class="brand">{{ item.brand }}</p>
+          <p class="name">Rs{{ item.sale_price }}</p>
+          <p>Address: {{ item.address1 }}</p>
+        </div>
+        <div class="col-5 p-3 text-start">
+          <p class="date">
+            Order Date:
+            {{ moment(item.order_date).format("DD/MM/YY") }}
+          </p>
+          <p class="date">
+            Estimated Delivery Date:
+            {{ moment(item.order_date).add(3, "days").format("DD/MM/YY") }}
+          </p>
+          <p class="track">
+            Track:
+            {{ getStatus(item.order_date) }}
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
