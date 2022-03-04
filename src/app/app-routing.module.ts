@@ -6,6 +6,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MyorderComponent } from './myorder/myorder.component';
+import { MyprofileComponent } from './myprofile/myprofile.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { SingleProductComponent } from './single-product/single-product.component';
@@ -14,7 +15,18 @@ const routes: Routes = [
   { path: 'register', component: RegistrationComponent, pathMatch: 'full' },
 
   { path: 'products', component: ProductPageComponent, pathMatch: 'full' },
-  { path: 'myorders', component: MyorderComponent, pathMatch: 'full' },
+  {
+    path: 'myorders',
+    component: MyorderComponent,
+    pathMatch: 'full',
+    canActivate: [AuthService],
+  },
+  {
+    path: 'myprofile',
+    component: MyprofileComponent,
+    pathMatch: 'full',
+    canActivate: [AuthService],
+  },
   { path: 'cart', component: CartComponent, pathMatch: 'full' },
   {
     path: 'checkout',

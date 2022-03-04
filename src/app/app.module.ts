@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { MyorderComponent } from './myorder/myorder.component';
+import { MyprofileComponent } from './myprofile/myprofile.component';
 @NgModule({
   //decorator ..this provides extra data about this class
   declarations: [
@@ -36,6 +37,7 @@ import { MyorderComponent } from './myorder/myorder.component';
     CartComponent,
     CheckoutComponent,
     MyorderComponent,
+    MyprofileComponent,
   ],
   imports: [
     MatSnackBarModule,
